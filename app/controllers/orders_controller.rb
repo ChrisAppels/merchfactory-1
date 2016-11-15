@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
   end
 
   def show
+    @order_item = Order_item.new
   end
 
   def checkout
