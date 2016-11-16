@@ -247,37 +247,31 @@ OrderItem.create! ([{
   quantity: 200,
   product_id: 4,
   status: "printing",
-  order_id: 1
 },
 {
   quantity: 500,
   product_id: 1,
   status: "printing",
-  order_id: 1
 },
 {
   quantity: 100,
   product_id: 3,
   status: "printing",
-  order_id: 1
 },
 {
   quantity: 250,
   product_id: 6,
   status: "printing",
-  order_id: 2
 },
 {
   quantity: 1000,
   product_id: 7,
   status: "printing",
-  order_id: 2
 },
 {
   quantity: 500,
   product_id: 2,
   status: "printing",
-  order_id: 2
 }])
 
 
