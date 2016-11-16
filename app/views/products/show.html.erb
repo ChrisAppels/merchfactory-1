@@ -1,8 +1,14 @@
 <ul>
   <li><%= @product.name%></li>
   <li><%= @product.description%></li>
-  <li><%= @product.features%></li>
-  <li><%= @product.pictures%></li>
-  <li><%= @product.product_templates%></li>
 </ul>
+
+<%= form_for [@shopping_cart, @order_item] do |f| %>
+  <%= hidden_field_tag(:product_id, @product.id) %>
+  <%= f.label :quantity %>:
+  <%= f.text_field :quantity %><br />
+  <%= f.submit %>
+<% end %>
+
+
 
