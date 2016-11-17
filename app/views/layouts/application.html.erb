@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Merchfactory</title>
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Khula" rel="stylesheet">
-  </head>
+<head>
+  <title>Merchfactory</title>
 
-  <body>
+    <!-- Add these line for detecting device width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <link href="https://fonts.googleapis.com/css?family=Khula" rel="stylesheet">
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <%= render 'layouts/shared/navbar' %>
   <%= render 'shared/flashes' %>
-    <p class="notice"><%= notice %></p>
-     <p class="alert"><%= alert %></p>
-    <%= yield %>
-  </body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <%= yield %>
+</body>
 </html>
