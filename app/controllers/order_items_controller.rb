@@ -10,7 +10,6 @@ class OrderItemsController < ApplicationController
     @order_item.orderable = ShoppingCart.find(params[:shopping_cart_id])
     @order_item.quantity = params[:order_item][:quantity]
     @order_item.save!
-    session[:shopping_cart_id] = @shopping_cart.id
   end
 
 private
