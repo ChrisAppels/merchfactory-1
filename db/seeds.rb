@@ -274,6 +274,38 @@ OrderItem.create! ([{
   status: "printing",
 }])
 
+PriceBreak.create! ([
+{
+  product_id: 1,
+  quantity: 1,
+  price: 6,
+},
+{
+  product_id: 1,
+  quantity: 25,
+  price: 5,
+},
+{
+  product_id: 1,
+  quantity: 50,
+  price: 4,
+},
+{
+  product_id: 1,
+  quantity: 100,
+  price: 3,
+},
+{
+  product_id: 1,
+  quantity: 500,
+  price: 2,
+},
+{
+  product_id: 1,
+  quantity: 1000,
+  price: 1,
+}])
+
 
 
 
