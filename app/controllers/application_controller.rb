@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   helper_method :session_cart
 
   def session_cart
-    if !session[:shopping_cart_id].nil?
+    if session[:shopping_cart_id]
       ShoppingCart.find(session[:shopping_cart_id])
     else
       ShoppingCart.create
