@@ -1,9 +1,12 @@
 class OrdersController < ApplicationController
+
+  def new
+  end
+
   def create
   end
 
   def show
-    @order_item = Order_item.new
   end
 
   def checkout
