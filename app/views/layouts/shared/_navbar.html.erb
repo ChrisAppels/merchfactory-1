@@ -18,20 +18,17 @@
 </div>
 
 <!-- BOTTOM NAVBAR-->
-<div class="navbar-wagon-bottom">
+<div id="bottom-nav" class="navbar-wagon-bottom">
   <!-- Logo -->
 
   <div class="navbar-wagon-brand"> </div>
-
-  <div class="navbar-products">
-    <ul class="megamenu nav navbar-nav mr_megamenu-dropdown">
-      <li class="level0 nav1"> <a href="#"> <span>HOME</span></a> </li>
-      <li class="level0 nav2"> <a href="#"> <span>Product 1</span></a></li>
-      <li class="level0 nav3"> <a href="#"> <span>Product 3</span></a></li>
-      <li class="level0 nav4"> <a href="#"> <span>Product 4</span></a></li>
-      <li class="level0 nav5"> <a href="#"> <span>Product 5</span></a></li>
-    </ul>
-  </div>
+  <ul class="megamenu nav navbar-nav mr_megamenu-dropdown">
+    <li class="level0 nav1"> <a href="#"> <span>HOME</span></a> </li>
+    <li class="level0 nav2"> <a href="#"> <span>Product 1</span></a></li>
+    <li class="level0 nav3"> <a href="#"> <span>Product 3</span></a></li>
+    <li class="level0 nav4"> <a href="#"> <span>Product 4</span></a></li>
+    <li class="level0 nav5"> <a href="#"> <span>Product 5</span></a></li>
+  </ul>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -92,3 +89,66 @@
     </div>
   </div>
 </div>
+
+
+<nav>
+  <div class="top-nav">
+    <a href="#">
+      <%= image_tag('logo.png') %>
+    </a>
+    <div>
+      <p>Put your ass in someone's hand</p>
+      <p>Put your ass in someone's hand</p>
+      <p>Put your ass in someone's hand</p>
+    </div>
+  </div>
+  <div class="bottom-nav">
+    <ul>
+      <li><a href="#"><%= image_tag('logo.png') %></a></li>
+      <li><a href="#">Product</a></li>
+      <li><input type="text"></li>
+      <li><a href="#"><i class="fa fa-search"></i></a></li>
+    </ul>
+    <ul>
+      <li>CONTACT</li>
+      <li>ABOUT</li>
+      <li>WHOLESALE</li>
+      <li><i class="fa fa-shopping-cart"></i></li>
+      <li>
+        <% if user_signed_in? %>
+        <!-- Profile picture and dropdown -->
+        <div class="navbar-wagon-item">
+          <div class="dropdown">
+            <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+              <li>
+                <%= link_to "#" do %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "#" do %>
+                <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <% else %>
+        <!-- Login text link -->
+        <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+        <% end %>
+      </li>
+    </ul>
+
+
+
+  </div>
+</nav>

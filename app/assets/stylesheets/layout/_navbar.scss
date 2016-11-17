@@ -1,3 +1,13 @@
+
+
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  padding-top: 10px !important;
+}
+
 .navbar-wagon-top {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: white;
@@ -82,7 +92,7 @@
   transition: all 0.3s ease;
   border-top: 1px solid #fffcfc;
   display: flex;
-  height: 30px;
+  height: 40px;
   padding: 0px 30px;
   align-items: center;
   justify-content: space-between;
@@ -154,30 +164,30 @@
 }
 
 .container {
-    width: 100%;
+  width: 100%;
 }
 
 #navbar-wagon-menu {
-    width: 25px;
-    border-radius: 50%;
+  width: 25px;
+  border-radius: 50%;
 }
 
 h1 {
-font: FuturaStd-Heavy;
-font-size: 14px;
+  font: FuturaStd-Heavy;
+  font-size: 14px;
 }
 
 p{
-font: FuturaStd-Heavy;
-font-size: 12px;
-line-height: 16px;
+  font: FuturaStd-Heavy;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .nav > li > a {
-    position: relative;
-    display: flex;
-    padding: 10px 15px;
-    right: 372px;
+  position: relative;
+  display: flex;
+  padding: 10px 15px;
+  right: 372px;
 }
 a {
  color: rgb(128, 128, 128);
