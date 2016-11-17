@@ -10,5 +10,10 @@
   <%= f.submit %>
 <% end %>
 
-
+<h3>Pricebreaks!</h3>
+<ul>
+<% @product.price_breaks.each do |pricebreak| %>
+<li><%= "#{pricebreak.quantity}, #{pricebreak.price}" %></li>
+<% end %>
+</ul>
 
