@@ -1,3 +1,6 @@
 <h1>ShoppingCarts#show</h1>
 <p>Find me in app/views/shopping_carts/show.html.erb</p>
- <p><%="test #{@order_items.first}" %></p>
+<% @order_items.each do |order_item| %>
+  <p><%= "#{order_item.product.name}" %></p>
+<% end %>
+
