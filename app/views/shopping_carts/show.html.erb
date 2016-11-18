@@ -1,6 +1,7 @@
 <h1>ShoppingCarts#show</h1>
 <p>Find me in app/views/shopping_carts/show.html.erb</p>
 <% @order_items.each do |order_item| %>
-  <p><%= "#{order_item.product.name}, " %></p>
+<p><%= "#{order_item.product.name}, #{order_item.quantity}, * #{order_item.product.item_price_for_quantity(order_item.quantity).price} #{order_item.product.sum_price_for_quantity(order_item.quantity)} " %></p>
+
 <% end %>
 

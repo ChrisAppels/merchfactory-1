@@ -5,7 +5,7 @@ class ShoppingCartsController < ApplicationController
 
   def show
     @order_items = session_cart.order_items
-    @pricebreak = PriceBreak.new
+    @shopping_cart = session_cart
   end
 
   def destroy
