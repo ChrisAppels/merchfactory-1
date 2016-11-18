@@ -1,0 +1,13 @@
+
+#banner .banner-image {
+  height: 750px;
+  width: 100%;
+  background-image: image-url('banner.jpg');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+body { padding-bottom: 900px; }
