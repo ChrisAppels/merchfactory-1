@@ -1,6 +1,15 @@
 <ul>
   <li><%= @product.name%></li>
-  <li><%= @product.description%></li>
+
+  <li class="remove_bullet_points"><%= @product.description%></li>
+  <% @product.pictures.each do |picture| %>
+    <li>
+    <%= cl_image_tag picture.image, height: 600, width: 600, crop: :fill %>
+    </li>
+  <%end%>
+  <li><%#= cl_image_tag @product.pictures.image,  %>
+</li>
+
 </ul>
 
 <%= form_for [@shopping_cart, @order_item] do |f| %>

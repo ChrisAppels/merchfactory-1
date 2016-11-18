@@ -37,8 +37,11 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
+gem 'carrierwave'
+gem 'cloudinary'
+gem 'figaro'
 
-# Use Capistrano for deployment
+# Use apistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
