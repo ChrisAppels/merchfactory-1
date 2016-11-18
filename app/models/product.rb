@@ -6,4 +6,12 @@ class Product < ApplicationRecord
   has_many :features
   has_many :price_breaks
   has_many :product_categories
+
+  def item_price_for_quantity(quantity)
+    price_breaks.where("quantity < #{quantity}").order(:quantity).last
+  end
+
+  def sum_price_for_quantity(quantity)
+    quantity * item_price_for_quantity(quantity).price
+  end
 end
