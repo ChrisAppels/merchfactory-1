@@ -12,5 +12,5 @@ class PriceBreaksController < ApplicationController
   end
 
 
-
+end
 end
