@@ -2,57 +2,98 @@
 <nav>
   <div class="top-nav">
     <a href="#">
-      <%= image_tag('logo.png') %>
+      <%= image_tag('logo_svg.svg') %>
     </a>
     <div>
-      <p>Put your ass in someone's hand</p>
+      <p>Put your brand in someone's hand</p>
       <p><strong>Grow your business with Merch Factory's high value marketing products</strong></p>
     </div>
   </div>
   <div class="bottom-nav">
-    <ul class="product-search">
-      <li id="nav-logo" class="hide"><a href="#"><%= image_tag('logo.png') %></a></li>
-      <li><a href="#">Product</a></li>
-      <li><input type="text"></li>
-      <li><a href="#"><i class="fa fa-search"></i></a></li>
-    </ul>
-    <ul class="customer-navigation">
-      <li>CONTACT</li>
-      <li>ABOUT</li>
-      <li>WHOLESALE</li>
-      <li><i class="fa fa-shopping-cart"></i></li>
-      <li>
-        <% if user_signed_in? %>
-        <!-- Profile picture and dropdown -->
-        <div class="navbar-wagon-item">
-          <div class="dropdown">
-            <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-              <li>
-                <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to "#" do %>
-                <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-                <% end %>
-              </li>
-            </ul>
+    <div class="primary">
+      <ul class="product-search">
+        <li id="nav-logo" class="hide"><a href="#"><%= image_tag('logo_svg.svg') %></a></li>
+        <li id="product-dropdown"><span href="#">PRODUCTS</span></li>
+        <li><input type="text"></li>
+        <li><a href="#"><i class="fa fa-search"></i></a></li>
+      </ul>
+      <ul class="customer-navigation">
+        <li>CONTACT</li>
+        <li>ABOUT</li>
+        <li>WHOLESALE</li>
+        <li><i class="fa fa-shopping-cart"></i></li>
+        <li>
+          <% if user_signed_in? %>
+          <!-- Profile picture and dropdown -->
+          <div class="navbar-wagon-item">
+            <div class="dropdown">
+              <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+              <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+                <li>
+                  <%= link_to "#" do %>
+                  <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to root_path do %>
+                  <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                  <% end %>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
 
-        <% else %>
-        <!-- Login text link -->
-        <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
-        <% end %>
-      </li>
-    </ul>
+          <% else %>
+          <!-- Login text link -->
+          <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+    <div class="dropdown-container">
+      <div class="secondary">
+        <ul>
+          <a href=""><li>stuff</li></a>
+          <li>stuff</li>
+          <li>stuff</li>
+          <li>stuff</li>
+          <li>stuff</li>
+          <li>stuff</li>
+          <li>stuff</li>
+        </ul>
+        <ul>
+          <li>stuff</li>
+          <li>stuff</li>
+          <li>stuff</li>
+          <li>stuff</li>
+          <li>stuff</li>
+          <li>stuff</li>
+          <li>stuff</li>
+        </ul>
+        <ul>
+          <li>stuff</li>
+          <li>stuff</li>
+          <li>stuff</li>
+          <li>stuff</li>
+          <li>stuff</li>
+          <li>stuff</li>
+          <li>stuff</li>
+        </ul>
+        <ul>
+          <li>stuff</li>
+          <li>stuff</li>
+          <li>stuff</li>
+          <li>stuff</li>
+          <li>stuff</li>
+          <li>stuff</li>
+          <li>stuff</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </nav>

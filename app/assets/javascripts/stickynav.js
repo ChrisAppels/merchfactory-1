@@ -10,4 +10,18 @@ $(document).ready(function(){
     }
   }
   window.onscroll=stickyNav
+
+  $('#product-dropdown').click(function(){
+    var secondaryHeight = $('.secondary').outerHeight();
+    var outerContainerHeight = $('.dropdown-container').height();
+    var outerContainer = $('.dropdown-container');
+    console.log(outerContainerHeight);
+
+    if ( outerContainerHeight <  1 ) {
+      outerContainer.height(secondaryHeight);
+    } else {
+      outerContainer.height(0);
+    }
+  });
 });
+
