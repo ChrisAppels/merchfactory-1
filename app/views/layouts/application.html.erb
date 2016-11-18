@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="footer, links, icons" />
     <title>Merchfactory</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Khula" rel="stylesheet">
+<!--     <link href="css/bootstrap.min.css" rel="stylesheet">
+ -->    <link href="https://fonts.googleapis.com/css?family=Khula" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="footer, links, icons" />
+   <!--  <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/footer-distributed.css">
+ -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+
+
   </head>
 
   <body>
   <%= render 'shared/flashes' %>
     <p class="notice"><%= notice %></p>
      <p class="alert"><%= alert %></p>
+
+   <div id="page-content">
     <%= yield %>
+  </div>
+    <%= render 'shared/footer' %>
   </body>
 </html>
