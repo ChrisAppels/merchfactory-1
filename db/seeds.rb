@@ -6,11 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
 Order.destroy_all
 Address.destroy_all
-UserRole.destroy_all
-Role.destroy_all
 OrderItem.destroy_all
 Product.destroy_all
 ProductDesign.destroy_all
@@ -24,7 +21,7 @@ ProductTemplate.destroy_all
 Category.destroy_all
 
 
-User.create! ([{
+user_params = [{
   first_name: "customer 1",
   last_name: "Damiens",
   email: "customer1@gmail.com",
@@ -77,9 +74,27 @@ User.create! ([{
   company_name: "USA INCORPORATED",
   password: "123456",
   avatar: "https://upload.wikimedia.org/wikipedia/commons/1/16/Official_Portrait_of_President_Reagan_1981.jpg"
-}])
+},
+{
+  first_name: "Customer4",
+  last_name: "Duck",
+  email: "customer4@gmail.com",
+  phone: "3243456298",
+  company_name: "NL INCORPORATED",
+  password: "123456",
+  avatar: "https://upload.wikimedia.org/wikipedia/commons/1/16/Official_Portrait_of_President_Reagan_1981.jpg"
+}
+]
 
-Role.create! ([{
+user_params.each do |user_param|
+  password = user_param.delete(:password)
+  user = User.find_or_create_by(user_param)
+  user.password = password
+  user.save
+end
+
+
+role_params = [{
   role_type: "customer"
 },
 {
@@ -87,32 +102,42 @@ Role.create! ([{
 },
 {
   role_type: "admin"
-}])
+}]
 
-UserRole.create! ([{
-  user_id: 1,
-  role_id: 1
-},
-{
-  user_id: 2,
-  role_id: 2
-},
-{
-  user_id: 3,
-  role_id: 1
-},
-{
-  user_id: 4,
-  role_id: 2
-},
-{
-  user_id: 5,
-  role_id: 1
-},
-{
-  user_id: 6,
-  role_id: 2
-}])
+role_params.each do |role_param|
+  Role.find_or_create_by(role_param)
+end
+
+user_roles_params = [
+  {
+    user: User.find(1),
+    role: Role.find(1)
+  },
+  {
+    user: User.find(2),
+    role: Role.find(2)
+  },
+  {
+    user: User.find(3),
+    role: Role.find(1)
+  },
+  {
+    user: User.find(4),
+    role: Role.find(2)
+  },
+  {
+    user: User.find(5),
+    role: Role.find(1)
+  },
+  {
+    user: User.find(6),
+    role: Role.find(2)
+  }
+]
+
+user_roles_params.each do |user_roles_param|
+  UserRole.find_or_create_by user_roles_param
+end
 
 Category.create! ([{
   name: "Band Merchandise",
@@ -126,6 +151,8 @@ Category.create! ([{
   name: "Brewery Merch",
   description: "Check out Merch Factory's fantastic range of bottle openers and T-Shirts. Perfect for your craft Brewery",
 }])
+
+
 
 
 Product.create! ([{
@@ -169,6 +196,13 @@ Product.create! ([{
   sku: "MF-USBC-8-01"
 }])
 
+picture = Picture.create!({
+  product: Product.first,
+  # image: "db/seeds/KTBO_PRODUCT_SHOT_01_SQUARE.jpg",
+  role: "Product Page Shot"
+})
+picture.image.store!(File.open(File.join(Rails.root, "db", "seeds","KTBO_PRODUCT_SHOT_01_SQUARE.jpg")))
+picture.save
 
 ProductCategory.create! ([{
   product_id: 1,
