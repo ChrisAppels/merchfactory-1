@@ -28,6 +28,7 @@ user_params = [{
   phone: "0989768543",
   company_name: "Global Corp",
   password: "123456",
+  role_id: 1,
   avatar: "http://static4.businessinsider.com/image/56c640526e97c625048b822a-480/donald-trump.jpg"
 },
 {
@@ -37,6 +38,7 @@ user_params = [{
   phone: "9873254987",
   company_name: "Company X",
   password: "123456",
+  role_id: 2,
   avatar: "http://dynaimage.cdn.turner.com/cnn-elections/candidates/,w_800/2701a6d0-clinton-4x3.jpg"
 },
 {
@@ -46,6 +48,7 @@ user_params = [{
   phone: "038472638",
   company_name: "Merch Factory",
   password: "123456",
+  role_id: 1,
   avatar: "http://www.billboard.com/files/styles/promo_650/public/media/President-Barack-Obama-2014-billboard-650.jpg"
 },
 {
@@ -55,6 +58,7 @@ user_params = [{
   phone: "3240987234",
   company_name: "Merica Corp",
   password: "123456",
+  role_id: 2,
   avatar: "https://upload.wikimedia.org/wikipedia/commons/d/d4/George-W-Bush.jpeg"
 },
 {
@@ -64,6 +68,7 @@ user_params = [{
   phone: "340598344",
   company_name: "Merch Factory",
   password: "123456",
+  role_id: 1,
   avatar: "http://specials-images.forbesimg.com/imageserve/5638e0f8e4b0ffa7afe6a0ab/320x486.jpg?fit=scale&background=000000"
 },
 {
@@ -73,6 +78,7 @@ user_params = [{
   phone: "324987230298",
   company_name: "USA INCORPORATED",
   password: "123456",
+  role_id: 2,
   avatar: "https://upload.wikimedia.org/wikipedia/commons/1/16/Official_Portrait_of_President_Reagan_1981.jpg"
 },
 {
@@ -82,6 +88,7 @@ user_params = [{
   phone: "3243456298",
   company_name: "NL INCORPORATED",
   password: "123456",
+  role_id: 1,
   avatar: "https://upload.wikimedia.org/wikipedia/commons/1/16/Official_Portrait_of_President_Reagan_1981.jpg"
 }
 ]
@@ -108,36 +115,36 @@ role_params.each do |role_param|
   Role.find_or_create_by(role_param)
 end
 
-user_roles_params = [
-  {
-    user: User.find(1),
-    role: Role.find(1)
-  },
-  {
-    user: User.find(2),
-    role: Role.find(2)
-  },
-  {
-    user: User.find(3),
-    role: Role.find(1)
-  },
-  {
-    user: User.find(4),
-    role: Role.find(2)
-  },
-  {
-    user: User.find(5),
-    role: Role.find(1)
-  },
-  {
-    user: User.find(6),
-    role: Role.find(2)
-  }
-]
+# user_roles_params = [
+#   {
+#     user: User.find(1),
+#     role: Role.find(1)
+#   },
+#   {
+#     user: User.find(2),
+#     role: Role.find(2)
+#   },
+#   {
+#     user: User.find(3),
+#     role: Role.find(1)
+#   },
+#   {
+#     user: User.find(4),
+#     role: Role.find(2)
+#   },
+#   {
+#     user: User.find(5),
+#     role: Role.find(1)
+#   },
+#   {
+#     user: User.find(6),
+#     role: Role.find(2)
+#   }
+# ]
 
-user_roles_params.each do |user_roles_param|
-  UserRole.find_or_create_by user_roles_param
-end
+# user_roles_params.each do |user_roles_param|
+#   UserRole.find_or_create_by user_roles_param
+# end
 
 Category.create! ([{
   name: "Band Merchandise",
