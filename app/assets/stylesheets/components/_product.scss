@@ -1,0 +1,77 @@
+.product-page-container {
+  // border: 5px solid blue;
+  display: flex;
+}
+
+.product-page-split-left {
+  // background-color: red;
+  display: flex;
+  flex-direction: column;
+}
+.product-page-split-right {
+  // background-color: red;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-info {
+  width: 99%;
+  margin: 2px;
+}
+.product-order-form {
+  display: flex;
+  flex-direction: row;
+  background-color: $merchfactory_light_gray;
+  // background-color: purple;
+}
+.price-breaks {
+  background-color: $merchfactory_dark_gray;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  margin: 5px;
+  padding: 5px;
+}
+.quantity {
+  width: 50px;
+  // background-color: green;
+  margin: 2px;
+}
+.price_per_unit {
+  width: 50px;
+  // background-color: green;
+  margin: 2px;
+  text-align: right;
+}
+.order-details {
+  width: 99%;
+  // background-color: green;
+  margin: 2px;
+  display: flex;
+  flex-direction: column;
+}
+.download-templates {
+  width: 99%;
+  height: 50px;
+  background-color: gray;
+  margin: 5px;
+}
+.upload-templates {
+  width: 99%;
+  height: 50px;
+  background-color: yellow;
+  margin: 5px;
+}
+.select-quantity {
+  width: 99%;
+  height: 50px;
+  background-color: yellow;
+  margin: 5px;
+}
+.add-to-cart {
+  width: 99%;
+  height: 50px;
+  background-color: $merchfactory_pink;
+  margin: 5px;
+}

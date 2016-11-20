@@ -115,36 +115,6 @@ role_params.each do |role_param|
   Role.find_or_create_by(role_param)
 end
 
-# user_roles_params = [
-#   {
-#     user: User.find(1),
-#     role: Role.find(1)
-#   },
-#   {
-#     user: User.find(2),
-#     role: Role.find(2)
-#   },
-#   {
-#     user: User.find(3),
-#     role: Role.find(1)
-#   },
-#   {
-#     user: User.find(4),
-#     role: Role.find(2)
-#   },
-#   {
-#     user: User.find(5),
-#     role: Role.find(1)
-#   },
-#   {
-#     user: User.find(6),
-#     role: Role.find(2)
-#   }
-# ]
-
-# user_roles_params.each do |user_roles_param|
-#   UserRole.find_or_create_by user_roles_param
-# end
 
 Category.create! ([{
   name: "Band Merchandise",
@@ -164,7 +134,7 @@ Category.create! ([{
 
 Product.create! ([{
   name: "Key Tag Bottle Opener",
-  description: "Super handy small bottle opener that fits on your keys. Printed both sides with super durable print.",
+  description: "Super handy small bottle opener that fits on your keys. Printed both sides with super durable print.Here is some interesting but relatively breif information about our wonderful custom printed USB business card. They have an 8gig capacity and we can print on both sides. You should really get some for your business. You can even pre-load them with your own files.",
   sku: "MF-KTBO-WH-01"
 },
 {

@@ -78,7 +78,7 @@ nav .bottom-nav input:focus {
 }
 
 nav .bottom-nav .product-search #product-dropdown span {
-  border-bottom: 4px solid #d80462;
+  border-bottom: 4px solid $merchfactory_pink;
   padding-bottom: 8px;
 }
 
@@ -96,12 +96,12 @@ nav .bottom-nav .product-search li:last-child {
 }
 
 nav .bottom-nav .product-search li a { transition: 0.3s; }
-nav .bottom-nav .product-search li a:hover { color:#d80462; }
+nav .bottom-nav .product-search li a:hover { color:$merchfactory_pink; }
 
 nav .bottom-nav .navbar-wagon-item ul li { padding: 0;}
 
 nav .bottom-nav .customer-navigation li:hover {
-  color: #d80462;
+  color: $merchfactory_pink;
 }
 
 nav .bottom-nav li a {
@@ -109,7 +109,7 @@ nav .bottom-nav li a {
 }
 
 nav .bottom-nav .customer-navigation li a:hover {
-  color: #d80462;
+  color: $merchfactory_pink;
   text-decoration: none;
 }
 

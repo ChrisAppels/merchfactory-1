@@ -1,25 +1,57 @@
 
-  <% @product.pictures.each do |picture| %>
+
+<div class= "product-page-container">
+  <div class= "product-page-split-left">
+    <% @product.pictures.each do |picture| %>
     <div class= "product_image_large">
       <%= cl_image_tag picture.image, height: 600, width: 600, crop: :fill %>
     </div>
   <%end%>
- <li><%= @product.name%></li>
+  </div>
+  <div class= "product-page-split-right">
+    <div class= "product-info">
+      <h1><%= @product.name%></h1>
 
-  <li ><%= @product.description%></li>
+  <p><%= @product.description%></p>
+    </div>
+    <div class= "product-order-form">
+      <div class= "price-breaks">
+        <div class= "quantity">
+        <p>Qty</p>
+        <% @product.price_breaks.each do |pricebreak| %>
+        <div class= "quantity_list_item"><%= "#{pricebreak.quantity}" %></div>
+        <% end %>
+        </div>
+        <div class= "price_per_unit">
+        <p>Price/Unit</p>
+        <% @product.price_breaks.each do |pricebreak| %>
+        <div class= "price_per_unit_list_item"><%= "#{pricebreak.price}" %></div>
+        <% end %>
+        </div>
+      </div>
+      <div class= "order-details">
+        <div class= "download-templates">
+        <h1>1. Download a design template</h1>
+        </div>
+        <div class= "upload-templates">
+        <h1>2. Upload your design</h1>
+        </div>
+        <div class= "select-quantity">
+        <h1>3. Select your quantity</h1>
+          <%= form_for [@shopping_cart, @order_item] do |f| %>
+          <%= hidden_field_tag(:product_id, @product.id) %>
+          <%= f.label :quantity %>:
+          <%= f.text_field :quantity %><br />
+        </div>
+        <div class= "add-to-cart btn-main" >
+        <h1>Add to Cart</h1>
+          <!-- <%= f.submit %> -->
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 
+</div>
 
-<%= form_for [@shopping_cart, @order_item] do |f| %>
-  <%= hidden_field_tag(:product_id, @product.id) %>
-  <%= f.label :quantity %>:
-  <%= f.text_field :quantity %><br />
-  <%= f.submit %>
-<% end %>
-
-<h3>Pricebreaks!</h3>
-<ul>
-<% @product.price_breaks.each do |pricebreak| %>
-<li><%= "#{pricebreak.quantity}, #{pricebreak.price}" %></li>
-<% end %>
-</ul>
 
