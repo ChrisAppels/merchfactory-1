@@ -4,7 +4,7 @@
   <div class= "product-page-split-left">
     <% @product.pictures.each do |picture| %>
     <div class= "product_image_large">
-      <%= cl_image_tag picture.image, height: 600, width: 600, crop: :fill %>
+      <%= cl_image_tag picture.image, height: 550, width: 550, crop: :fill %>
     </div>
   <%end%>
   </div>
@@ -25,11 +25,16 @@
         <div class= "price_per_unit">
         <p>Price/Unit</p>
         <% @product.price_breaks.each do |pricebreak| %>
-        <div class= "price_per_unit_list_item"><%= "#{pricebreak.price}" %></div>
+        <div class= "price_per_unit_list_item"><%= "$#{pricebreak.price}" %></div>
         <% end %>
         </div>
       </div>
       <div class= "order-details">
+        <div class= "order-form">
+        <div class= "user-instruction">
+          <p>To place an order:</p>
+          </div>
+        </div>
         <div class= "download-templates">
         <div class= "user-instruction">
           <h1>1. Download a design template</h1>
@@ -51,12 +56,19 @@
               <%= f.text_field :quantity %><br />
           </div>
         </div>
-        <div class= "add-to-cart btn-main" >
-          Add to Cart
-          <%= f.submit %>
+        <div class= "add-to-cart" >
+          <%= f.submit "Add to cart",:class => 'btn-main' %>
           <% end %>
         </div>
       </div>
+    </div>
+    <div class= "additional-info">
+      <p>
+      Need help with your design? Email us your logo/artword  and we will help design it free of charge.
+      </p>
+      <p>
+      Want to check the quality first? Simply change the quantity to 0 and we’ll send you a free sample!
+      </p>
     </div>
   </div>
 

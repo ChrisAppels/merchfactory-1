@@ -181,7 +181,7 @@ picture = Picture.create!({
 picture.image.store!(File.open(File.join(Rails.root, "db", "seeds","KTBO_PRODUCT_SHOT_01_SQUARE.jpg")))
 picture.save
 
-ProductCategory.create! ([{
+ProductCategory.create ([{
   product_id: 1,
   category_id: 1
 },
@@ -288,33 +288,53 @@ OrderItem.create! ([{
 PriceBreak.create! ([
 {
   product_id: 1,
-  quantity: 1,
-  price: 6,
+  quantity: 5,
+  price: 9.95,
+},
+{
+  product_id: 1,
+  quantity: 10,
+  price: 6.80,
 },
 {
   product_id: 1,
   quantity: 25,
-  price: 5,
+  price: 5.75,
 },
 {
   product_id: 1,
   quantity: 50,
-  price: 4,
+  price: 2.80,
 },
 {
   product_id: 1,
   quantity: 100,
-  price: 3,
+  price: 1.95,
 },
 {
   product_id: 1,
   quantity: 500,
-  price: 2,
+  price: 1.75,
 },
 {
   product_id: 1,
   quantity: 1000,
-  price: 1,
+  price: 1.69,
+},
+{
+  product_id: 1,
+  quantity: 2000,
+  price: 1.65,
+},
+{
+  product_id: 1,
+  quantity: 5000,
+  price: 1.52,
+},
+{
+  product_id: 1,
+  quantity: 10000,
+  price: 1.39,
 }])
 
 

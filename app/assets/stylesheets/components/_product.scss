@@ -12,6 +12,9 @@
   // background-color: red;
   width: 100%;
   display: flex;
+  // justify-content: space-between;
+  justify-content: flex-end;
+
   flex-direction: column;
 }
 
@@ -54,27 +57,46 @@
   flex-direction: column;
 }
 .download-templates {
-  width: 99%;
-  height: 50px;
-  background-color: gray;
+
+  // background-color: gray;
   display: flex;
+  width: 99%;
+  height:100%;
+  text-justify: center;
+  // height: 50px;
+
 }
 .upload-templates {
+  display: flex;
   width: 99%;
-  height: 50px;
-  background-color: yellow;
+  height:100%;
+  // height: 50px;
+  // background-color: yellow;
   display: flex;
 }
 .select-quantity {
   width: 99%;
-  height: 50px;
-  background-color: yellow;
+  height: 100%;
+  // height: 50px;
+  // background-color: yellow;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .add-to-cart {
   width: 99%;
-  height: 50px;
   // background-color: $merchfactory_pink;
 }
+
+.additional-info {
+  width: 100%;
+  height: 50px;
+  margin: 0px;
+  padding-right: 30px;
+  background-color: $merchfactory_light_gray;
+  text-align: right;
+}
+
+// .additional-info p {
+//   text-align: right;
+// }
