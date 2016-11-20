@@ -18,6 +18,8 @@
 .product-info {
   width: 99%;
   margin: 2px;
+  padding-left: 15px;
+  padding-right: 30px;
 }
 .product-order-form {
   display: flex;
@@ -30,8 +32,8 @@
   display: flex;
   justify-content: space-between;
   color: white;
-  margin: 5px;
-  padding: 5px;
+  margin: 15px;
+  padding: 10px;
 }
 .quantity {
   width: 50px;
@@ -47,7 +49,7 @@
 .order-details {
   width: 99%;
   // background-color: green;
-  margin: 2px;
+  margin: 15px 15px 15px 0px;
   display: flex;
   flex-direction: column;
 }
@@ -55,23 +57,24 @@
   width: 99%;
   height: 50px;
   background-color: gray;
-  margin: 5px;
+  display: flex;
 }
 .upload-templates {
   width: 99%;
   height: 50px;
   background-color: yellow;
-  margin: 5px;
+  display: flex;
 }
 .select-quantity {
   width: 99%;
   height: 50px;
   background-color: yellow;
-  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .add-to-cart {
   width: 99%;
   height: 50px;
-  background-color: $merchfactory_pink;
-  margin: 5px;
+  // background-color: $merchfactory_pink;
 }

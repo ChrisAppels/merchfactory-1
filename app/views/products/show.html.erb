@@ -31,21 +31,29 @@
       </div>
       <div class= "order-details">
         <div class= "download-templates">
-        <h1>1. Download a design template</h1>
+        <div class= "user-instruction">
+          <h1>1. Download a design template</h1>
+          </div>
         </div>
         <div class= "upload-templates">
-        <h1>2. Upload your design</h1>
+          <div class= "user-instruction">
+          <h1>2. Upload your design</h1>
+          </div>
         </div>
         <div class= "select-quantity">
-        <h1>3. Select your quantity</h1>
-          <%= form_for [@shopping_cart, @order_item] do |f| %>
-          <%= hidden_field_tag(:product_id, @product.id) %>
-          <%= f.label :quantity %>:
-          <%= f.text_field :quantity %><br />
+        <div class= "user-instruction">
+          <h1>3. Select your quantity</h1>
+          </div>
+          <div class= "user-input">
+              <%= form_for [@shopping_cart, @order_item] do |f| %>
+              <%= hidden_field_tag(:product_id, @product.id) %>
+              <%= f.label :quantity %>:
+              <%= f.text_field :quantity %><br />
+          </div>
         </div>
         <div class= "add-to-cart btn-main" >
-        <h1>Add to Cart</h1>
-          <!-- <%= f.submit %> -->
+          Add to Cart
+          <%= f.submit %>
           <% end %>
         </div>
       </div>
