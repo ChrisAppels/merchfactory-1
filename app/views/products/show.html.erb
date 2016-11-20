@@ -1,16 +1,13 @@
-<ul>
+
   <% @product.pictures.each do |picture| %>
-    <div>
-      <li class="remove_bullet_points">
+    <div class= "product_image_large">
       <%= cl_image_tag picture.image, height: 600, width: 600, crop: :fill %>
-      </li>
     </div>
   <%end%>
  <li><%= @product.name%></li>
 
   <li ><%= @product.description%></li>
 
-</ul>
 
 <%= form_for [@shopping_cart, @order_item] do |f| %>
   <%= hidden_field_tag(:product_id, @product.id) %>
