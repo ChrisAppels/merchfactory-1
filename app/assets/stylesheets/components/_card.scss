@@ -2,16 +2,23 @@
 
 
 .product-card {
-  width: 25%;
-  height: 300px;
-  background-color: red;
-  margin: 5px;
+  width: 100%;
+  height: 360px;
+  background-size: cover;
+  position: relative;
 }
 
-.product_image_card {
-  width: 200px;
-  height: 200px;
+.product-card-name {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  color: white;
 }
+
+// .product_image_card {
+//   width: 200px;
+//   height: 200px;
+// }
 
 
 // .card-description {
