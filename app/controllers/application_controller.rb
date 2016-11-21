@@ -6,7 +6,11 @@ class ApplicationController < ActionController::Base
 
   def session_cart
     if session[:shopping_cart_id]
-      ShoppingCart.find(session[:shopping_cart_id])
+      begin
+        ShoppingCart.find(session[:shopping_cart_id])
+      rescue ActiveRecord::RecordNotFound
+        ShoppingCart.create
+      end
     else
       ShoppingCart.create
     end
