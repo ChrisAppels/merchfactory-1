@@ -21,7 +21,12 @@
         <li><a href="#">CONTACT</a></li>
         <li><a href="#">ABOUT</a></li>
         <li><a href="#">WHOLESALE</a></li>
-        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+        <li>
+          <a href="#" id="shopping-cart">
+            <i class="fa fa-shopping-cart"></i>
+            <span><%= session_cart.order_items.count %></span>
+          </a>
+        </li>
         <li>
           <% if user_signed_in? %>
           <!-- Profile picture and dropdown -->
