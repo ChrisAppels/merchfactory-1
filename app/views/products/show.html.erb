@@ -50,7 +50,7 @@
           <h1>3. Select your quantity</h1>
           </div>
           <div class= "user-input">
-              <%= form_for [@shopping_cart, @order_item] do |f| %>
+              <%= form_for [@shopping_cart, @order_item], remote: true do |f| %>
               <%= hidden_field_tag(:product_id, @product.id) %>
               <%= f.label :quantity %>:
               <%= f.text_field :quantity %><br />
