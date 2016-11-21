@@ -13,8 +13,24 @@
     <div class="primary">
       <ul class="product-search">
         <li id="nav-logo" class="hide"><a href="#"><%= image_tag('logo_svg.svg') %></a></li>
-        <li id="product-dropdown"><a href="#"><span>PRODUCTS</span></a></li>
-        <li><input type="text" class= "search-bar", placeholder ="search"} ></li>
+        <li>
+        <div class="dropdown" id="dropdown-products">
+        <a href="#" class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Products
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <% Category.all.each do |category| %>
+            <li>
+              <%= link_to category_products_path(category) do %>
+                <%= category.name %>
+              <% end %>
+             </li>
+            <%end%>
+          </ul>
+        </div>
+        </li>
+        <li><input type="text" class= "search-bar" placeholder ="search" ></li>
         <li><a href="#"><i class="fa fa-search"></i></a></li>
       </ul>
       <ul class="customer-navigation">
@@ -54,46 +70,6 @@
           <% end %>
         </li>
       </ul>
-    </div>
-    <div class="dropdown-container">
-      <div class="secondary">
-        <ul>
-          <a href=""><li>stuff</li></a>
-          <li>stuff</li>
-          <li>stuff</li>
-          <li>stuff</li>
-          <li>stuff</li>
-          <li>stuff</li>
-          <li>stuff</li>
-        </ul>
-        <ul>
-          <li>stuff</li>
-          <li>stuff</li>
-          <li>stuff</li>
-          <li>stuff</li>
-          <li>stuff</li>
-          <li>stuff</li>
-          <li>stuff</li>
-        </ul>
-        <ul>
-          <li>stuff</li>
-          <li>stuff</li>
-          <li>stuff</li>
-          <li>stuff</li>
-          <li>stuff</li>
-          <li>stuff</li>
-          <li>stuff</li>
-        </ul>
-        <ul>
-          <li>stuff</li>
-          <li>stuff</li>
-          <li>stuff</li>
-          <li>stuff</li>
-          <li>stuff</li>
-          <li>stuff</li>
-          <li>stuff</li>
-        </ul>
-      </div>
     </div>
   </div>
 </nav>
