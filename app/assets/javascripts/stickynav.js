@@ -11,6 +11,8 @@ $(document).ready(function(){
   }
   window.onscroll=stickyNav
 
+  $('.dropdown-toggle').dropdown()
+
   $('#product-dropdown').click(function(){
     var secondaryHeight = $('.secondary').outerHeight();
     var outerContainerHeight = $('.dropdown-container').height();
