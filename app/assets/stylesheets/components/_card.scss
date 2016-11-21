@@ -1,0 +1,82 @@
+
+
+
+.product-card {
+  width: 100%;
+  height: 360px;
+  background-size: cover;
+  position: relative;
+}
+
+.product-card-name {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  color: white;
+}
+
+// .product_image_card {
+//   width: 200px;
+//   height: 200px;
+// }
+
+
+// .card-description {
+//   position: absolute;
+//   bottom: 5px;
+//   left: 10px;
+// }
+
+.card-product-name p {
+  font-size: 13px;
+  }
+
+// .card-link {
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   right: 0;
+//   width: 100%;
+//   z-index:2;
+//   background: black;
+//   opacity: 0;
+// }
+
+
+// .card-link:hover{
+//   opacity: 0.1;
+// }
+
+// .card-description p {
+//   overflow: hidden;
+//   max-width: 50ch;
+// }
+
+// .card-description {
+//     width: 35ch;
+//     height:20px;
+//     line-height:20px; /* Height / no. of lines to display */
+//     overflow:hidden;
+// }
+
+
+// .plane_card {}
+// .plane-card span {}
+// .plane-card h2 {
+//   font-size: 24px;
+//   text-transform: uppercase;
+//   padding: 10px;
+// }
+// .plane-card .card-description {
+//     width: 100%;
+//     display: flex;
+// }
+// .plane-card .card-description .first {
+//   width: 60%;
+// }
+// .plane-card .card-description .last {
+//   width: 40%;
+// }
+
+
+

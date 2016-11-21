@@ -115,6 +115,11 @@ end
 
 
 category_params = [{
+  name: "All Products",
+  description: "This category literally has everyting",
+
+},
+{
   name: "Band Merchandise",
   description: "Make some extra cash from your gigs with our quality band merch products",
 },
@@ -148,29 +153,39 @@ product_params = [{
   sku: "MF-TS-ASC-01"
 },
 {
-  name: "Printed Guitar Pick",
-  description: "Availble in 4 thicknesses and printed on both sides. Your fans will love a guitar pick from their favorite band!",
-  sku: "MF-GP-WH-01"
+  name: "BagReturn Luggage Tag",
+  description: "Protect your luggage with a high quality BagReturn luggage tag",
+  sku: "MF-BR-BT-TEARDROP-01"
 },
 {
-  name: "Printed Golf Ball",
-  description: "Avaible in three diferent styles. The print area is 23mm in diameter. Perfect for corporate golf days",
-  sku: "MF-GB-SRX-01"
-},
-{
-  name: "Golf Bag Member ID Tag",
-  description: "Membership ID tag for your memeber. Printed with your clubs logo and photo. Personalised with the member's name.",
-  sku: "MF-GBT-RND-70"
-},
-{
-  name: "Bar Blade Bottle Opener",
-  description: "Perfect bottle opener for bartenders. Large area for branding. These are great for Breweries",
-  sku: "MF-GBT-RND-70"
-},
-{
-  name: "Printed USB Business Cards",
-  description: "Fits nicely in your wallet and a full 8gig of storage. High quality print on both side. Save your brochures and company documents",
-  sku: "MF-USBC-8-01"
+  name: "Custom Printed Wine Box",
+  description: "Amazing gift. You should purchase many for many friends",
+  sku: "MF-WB-PINEWOOD-01"
+# },
+# {
+#   name: "Printed Guitar Pick",
+#   description: "Availble in 4 thicknesses and printed on both sides. Your fans will love a guitar pick from their favorite band!",
+#   sku: "MF-GP-WH-01"
+# },
+# {
+#   name: "Printed Golf Ball",
+#   description: "Avaible in three diferent styles. The print area is 23mm in diameter. Perfect for corporate golf days",
+#   sku: "MF-GB-SRX-01"
+# },
+# {
+#   name: "Golf Bag Member ID Tag",
+#   description: "Membership ID tag for your memeber. Printed with your clubs logo and photo. Personalised with the member's name.",
+#   sku: "MF-GBT-RND-70"
+# },
+# {
+#   name: "Bar Blade Bottle Opener",
+#   description: "Perfect bottle opener for bartenders. Large area for branding. These are great for Breweries",
+#   sku: "MF-GBT-RND-70"
+# },
+# {
+#   name: "Printed USB Business Cards",
+#   description: "Fits nicely in your wallet and a full 8gig of storage. High quality print on both side. Save your brochures and company documents",
+#   sku: "MF-USBC-8-01"
 }]
 
 product_params.each do |product_param|
@@ -202,9 +217,30 @@ picture_params = [{
   },
   {
     product: Product.find_by(name: 'iPhone 7 Case'),
-    image: "db/seeds/KTBO_PRODUCT_SHOT_01_SQUARE.jpg",
+    image: "db/seeds/PHONE_CASE_PRODUCT_SHOT_01_SQUARE.jpg",
     role: "Product Page Shot"
+  },
+  {
+    product: Product.find_by(name: 'Printed T-Shirt'),
+    image: "db/seeds/T-SHIRT_PRODUCT_SHOT_01_SQUARE.jpg",
+    role: "Product Page Shot"
+  },
+  {
+    product: Product.find_by(name: 'BagReturn Luggage Tag'),
+    image: "db/seeds/BAG_TAG_PRODUCT_SHOT_01_SQUARE.jpg",
+    role: "Product Page Shot"
+  },
+  {
+    product: Product.find_by(name: 'Custom Printed Wine Box'),
+    image: "db/seeds/WINE_BOX_PRODUCT_SHOT_01_SQUARE.jpg",
+    role: "Product Page Shot"
+  # },
+  # {
+  #   product: Product.find_by(name: 'Printed Golf Ball'),
+  #   image: "db/seeds/T-SHIRT_PRODUCT_SHOT_01_SQUARE.jpg",
+  #   role: "Product Page Shot"
   }]
+
 
 picture_params.each do |picture_param|
   puts "uploading a picture for product #{picture_param[:product_id]}"
@@ -230,34 +266,34 @@ product_category_params = [{
 {
   product: Product.find_by(name: 'Printed T-Shirt'),
   category: Category.find_by(name: 'Band Merchandise')
-},
-{
-  product: Product.find_by(name: 'Printed Guitar Pick'),
-  category: Category.find_by(name: 'Band Merchandise')
-},
-{
-  product: Product.find_by(name: 'Key Tag Bottle Opener'),
-  category: Category.find_by(name: 'Golf Merchandise')
-},
-{
-  product: Product.find_by(name: 'Printed Golf Ball'),
-  category: Category.find_by(name: 'Golf Merchandise')
-},
-{
-  product: Product.find_by(name: 'Golf Bag Member ID Tag'),
-  category: Category.find_by(name: 'Golf Merchandise')
-},
-{
-  product: Product.find_by(name: 'Key Tag Bottle Opener'),
-  category: Category.find_by(name: 'Brewery Merchandise')
-},
-{
-  product: Product.find_by(name: 'Printed T-Shirt'),
-  category: Category.find_by(name: 'Brewery Merchandise')
-},
-{
-  product: Product.find_by(name: 'Bar Blade Bottle Opener'),
-  category: Category.find_by(name: 'Brewery Merchandise')
+# },
+# {
+#   product: Product.find_by(name: 'Printed Guitar Pick'),
+#   category: Category.find_by(name: 'Band Merchandise')
+# },
+# {
+#   product: Product.find_by(name: 'Key Tag Bottle Opener'),
+#   category: Category.find_by(name: 'Golf Merchandise')
+# },
+# {
+#   product: Product.find_by(name: 'Printed Golf Ball'),
+#   category: Category.find_by(name: 'Golf Merchandise')
+# },
+# {
+#   product: Product.find_by(name: 'Golf Bag Member ID Tag'),
+#   category: Category.find_by(name: 'Golf Merchandise')
+# },
+# {
+#   product: Product.find_by(name: 'Key Tag Bottle Opener'),
+#   category: Category.find_by(name: 'Brewery Merchandise')
+# },
+# {
+#   product: Product.find_by(name: 'Printed T-Shirt'),
+#   category: Category.find_by(name: 'Brewery Merchandise')
+# },
+# {
+#   product: Product.find_by(name: 'Bar Blade Bottle Opener'),
+#   category: Category.find_by(name: 'Brewery Merchandise')
 }]
 
 product_category_params.each do |product_category_param|
