@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 20161121151136) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "amount_cents"
+    t.json     "payment"
     t.index ["address_id"], name: "index_orders_on_address_id", using: :btree
     t.index ["staff_id"], name: "index_orders_on_staff_id", using: :btree
     t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
