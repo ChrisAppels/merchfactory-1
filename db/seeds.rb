@@ -385,7 +385,7 @@ end
 
 price_break_params = [{
   product: Product.find_by(name: 'Key Tag Bottle Opener'),
-  quantity: 5,
+  quantity: 1,
   price_cents: 995,
 },
 {

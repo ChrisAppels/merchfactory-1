@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
-  get 'orders/checkout'
 
-  get 'orders/payment'
-
-  get 'orders/confirmation'
 
   root to: 'pages#home'
   devise_for :users

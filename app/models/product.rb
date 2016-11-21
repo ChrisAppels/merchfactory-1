@@ -8,7 +8,7 @@ class Product < ApplicationRecord
   has_many :product_categories
 
   def item_price_for_quantity(quantity)
-    price_breaks.where("quantity < #{quantity}").order(:quantity).last
+    price_breaks.where("quantity <= #{quantity}").order(:quantity).last
   end
 
   def sum_price_for_quantity(quantity)
