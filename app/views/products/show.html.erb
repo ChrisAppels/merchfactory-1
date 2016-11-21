@@ -25,7 +25,7 @@
         <div class= "price_per_unit">
         <p>Price/Unit</p>
         <% @product.price_breaks.each do |pricebreak| %>
-        <div class= "price_per_unit_list_item"><%= "$#{pricebreak.price}" %></div>
+        <div class= "price_per_unit_list_item"><%= "$#{pricebreak.price_cents}" %></div>
         <% end %>
         </div>
       </div>

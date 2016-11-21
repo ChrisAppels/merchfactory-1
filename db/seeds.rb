@@ -9,7 +9,6 @@
 Order.destroy_all
 Address.destroy_all
 OrderItem.destroy_all
-Product.destroy_all
 ProductDesign.destroy_all
 OrderItemDesign.destroy_all
 ProductDesignFile.destroy_all
@@ -116,7 +115,7 @@ role_params.each do |role_param|
 end
 
 
-Category.create! ([{
+category_params = [{
   name: "Band Merchandise",
   description: "Make some extra cash from your gigs with our quality band merch products",
 },
@@ -125,14 +124,16 @@ Category.create! ([{
   description: "Take a look at our range of expensive golf Merchandise. Show off your wealth to all your rich friends by spending waaaay to much on crap you don't need",
 },
 {
-  name: "Brewery Merch",
+  name: "Brewery Merchandise",
   description: "Check out Merch Factory's fantastic range of bottle openers and T-Shirts. Perfect for your craft Brewery",
-}])
+}]
+
+category_params.each do |category_param|
+  Category.find_or_create_by(category_param)
+end
 
 
-
-
-Product.create! ([{
+product_params = [{
   name: "Key Tag Bottle Opener",
   description: "Super handy small bottle opener that fits on your keys. Printed both sides with super durable print.Here is some interesting but relatively breif information about our wonderful custom printed USB business card. They have an 8gig capacity and we can print on both sides. You should really get some for your business. You can even pre-load them with your own files.",
   sku: "MF-KTBO-WH-01"
@@ -171,55 +172,103 @@ Product.create! ([{
   name: "Printed USB Business Cards",
   description: "Fits nicely in your wallet and a full 8gig of storage. High quality print on both side. Save your brochures and company documents",
   sku: "MF-USBC-8-01"
-}])
+}]
 
-picture = Picture.create!({
-  product: Product.first,
-  # image: "db/seeds/KTBO_PRODUCT_SHOT_01_SQUARE.jpg",
-  role: "Product Page Shot"
-})
-picture.image.store!(File.open(File.join(Rails.root, "db", "seeds","KTBO_PRODUCT_SHOT_01_SQUARE.jpg")))
-picture.save
+product_params.each do |product_param|
+  Product.find_or_create_by(product_param)
+end
 
-ProductCategory.create ([{
-  product_id: 1,
-  category_id: 1
-},
-{
-  product_id: 3,
-  category_id: 1
-},
-{
-  product_id: 4,
-  category_id: 1
-},
-{
-  product_id: 1,
-  category_id: 2
-},
-{
-  product_id: 5,
-  category_id: 2
-},
-{
-  product_id: 6,
-  category_id: 2
-},
-{
-  product_id: 1,
-  category_id: 3
-},
-{
-  product_id: 3,
-  category_id: 3
-},
-{
-  product_id: 7,
-  category_id: 3
-}])
 
-Address.create! ([{
-  user_id: 1,
+# *************************************************************
+
+
+
+# picture = Picture.create!({
+#   product: Product.find_by(name: "Key Tag Bottle Opener"),
+#                 # image: "db/seeds/KTBO_PRODUCT_SHOT_01_SQUARE.jpg",
+#   role: "Product Page Shot"
+# })
+
+# picture.image.store!(File.open(File.join(Rails.root, "db", "seeds","KTBO_PRODUCT_SHOT_01_SQUARE.jpg")))
+# picture.save
+
+
+
+
+
+picture_params = [{
+    product_id: 1,
+    image: "db/seeds/KTBO_PRODUCT_SHOT_01_SQUARE.jpg",
+    role: "Product Page Shot"
+  },{
+    product_id: 2,
+    image: "db/seeds/KTBO_PRODUCT_SHOT_01_SQUARE.jpg",
+    role: "Product Page Shot"
+  }
+]
+
+picture_params.each do |picture_param|
+  puts "uploading a picture for product #{picture_param[:product_id]}"
+  # binding.pry
+  upload_location = picture_param.delete :image
+
+  Picture.find_or_create_by(picture_param) do |picture|
+    #TODO : think about quota: make this smarter
+    picture.image.store!(File.open(File.join(Rails.root, upload_location)))
+    picture.save
+    puts "uploading done"
+  end
+end
+
+
+
+#*************************************************************
+
+product_category_params = [{
+  product: Product.find_by(name: 'Key Tag Bottle Opener'),
+  category: Category.find_by(name: 'Band Merchandise')
+},
+{
+  product: Product.find_by(name: 'Printed T-Shirt'),
+  category: Category.find_by(name: 'Band Merchandise')
+},
+{
+  product: Product.find_by(name: 'Printed Guitar Pick'),
+  category: Category.find_by(name: 'Band Merchandise')
+},
+{
+  product: Product.find_by(name: 'Key Tag Bottle Opener'),
+  category: Category.find_by(name: 'Golf Merchandise')
+},
+{
+  product: Product.find_by(name: 'Printed Golf Ball'),
+  category: Category.find_by(name: 'Golf Merchandise')
+},
+{
+  product: Product.find_by(name: 'Golf Bag Member ID Tag'),
+  category: Category.find_by(name: 'Golf Merchandise')
+},
+{
+  product: Product.find_by(name: 'Key Tag Bottle Opener'),
+  category: Category.find_by(name: 'Brewery Merchandise')
+},
+{
+  product: Product.find_by(name: 'Printed T-Shirt'),
+  category: Category.find_by(name: 'Brewery Merchandise')
+},
+{
+  product: Product.find_by(name: 'Bar Blade Bottle Opener'),
+  category: Category.find_by(name: 'Brewery Merchandise')
+}]
+
+product_category_params.each do |product_category_param|
+  ProductCategory.find_or_create_by(product_category_param)
+end
+
+
+
+address_params = [{
+  user_id: User.find_by(first_name: 'customer 1'),
   unit_number: "5",
   street_number: "28",
   street_name: "Down",
@@ -229,7 +278,7 @@ Address.create! ([{
   country: "Australia"
 },
 {
-    user_id: 1,
+  user_id: User.find_by(first_name: 'customer 1'),
   unit_number: "3",
   street_number: "420",
   street_name: "Herengracht",
@@ -237,24 +286,32 @@ Address.create! ([{
   post_code: "101BZ",
   state: "Dutch State",
   country: "The Netherlands"
-}])
+}]
+
+address_params.each do |address_param|
+  Address.find_or_create_by(address_param)
+end
 
 
 
-Order.create! ([{
-  user_id: 1,
-  staff_id: 2,
+order_params = [{
+  user_id: User.find_by(first_name: 'customer 1'),
+  staff_id: User.find_by(first_name: 'staff 1'),
   status: "pending",
-  address_id: 1
+  address_id: Address.first
 },
 {
-  user_id: 1,
-  staff_id: 4,
+  user_id: User.find_by(first_name: 'customer 2'),
+  staff_id: User.find_by(first_name: 'staff 2'),
   status: "pending",
-  address_id: 2
-}])
+  address_id: Address.first
+}]
 
-OrderItem.create! ([{
+order_params.each do |order_param|
+  Order.find_or_create_by(order_param)
+end
+
+order_item_params = [{
   quantity: 200,
   product_id: 4,
   status: "printing",
@@ -283,59 +340,66 @@ OrderItem.create! ([{
   quantity: 500,
   product_id: 2,
   status: "printing",
-}])
+}]
 
-PriceBreak.create! ([
-{
+order_item_params.each do |order_item_param|
+  OrderItem.find_or_create_by(order_item_param)
+end
+
+price_break_params = [{
   product_id: 1,
   quantity: 5,
-  price: 9.95,
+  price_cents: 995,
 },
 {
   product_id: 1,
   quantity: 10,
-  price: 6.80,
+  price_cents: 680,
 },
 {
   product_id: 1,
   quantity: 25,
-  price: 5.75,
+  price_cents: 575,
 },
 {
   product_id: 1,
   quantity: 50,
-  price: 2.80,
+  price_cents: 280,
 },
 {
   product_id: 1,
   quantity: 100,
-  price: 1.95,
+  price_cents: 195,
 },
 {
   product_id: 1,
   quantity: 500,
-  price: 1.75,
+  price_cents: 175,
 },
 {
   product_id: 1,
   quantity: 1000,
-  price: 1.69,
+  price_cents: 169,
 },
 {
   product_id: 1,
   quantity: 2000,
-  price: 1.65,
+  price_cents: 165,
 },
 {
   product_id: 1,
   quantity: 5000,
-  price: 1.52,
+  price_cents: 152,
 },
 {
   product_id: 1,
   quantity: 10000,
-  price: 1.39,
-}])
+  price_cents: 139,
+}]
+
+price_break_params.each do |price_break_param|
+  PriceBreak.find_or_create_by(price_break_param)
+end
 
 
 
