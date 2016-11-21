@@ -12,6 +12,6 @@ class Product < ApplicationRecord
   end
 
   def sum_price_for_quantity(quantity)
-    quantity * item_price_for_quantity(quantity).price
+    quantity * item_price_for_quantity(quantity).price_cents
   end
 end

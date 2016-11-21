@@ -6,18 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Order.destroy_all
-Address.destroy_all
-OrderItem.destroy_all
-ProductDesign.destroy_all
-OrderItemDesign.destroy_all
-ProductDesignFile.destroy_all
-ProductCategory.destroy_all
-PriceBreak.destroy_all
-Feature.destroy_all
-Picture.destroy_all
-ProductTemplate.destroy_all
-Category.destroy_all
+# Address.destroy_all
+# OrderItem.destroy_all
+# ProductDesign.destroy_all
+# OrderItemDesign.destroy_all
+# ProductDesignFile.destroy_all
+# ProductCategory.destroy_all
+# PriceBreak.destroy_all
+# Feature.destroy_all
+# Picture.destroy_all
+# ProductTemplate.destroy_all
+# Category.destroy_all
 
 
 user_params = [{
@@ -197,15 +196,15 @@ end
 
 
 picture_params = [{
-    product_id: 1,
+    product: Product.find_by(name: 'Key Tag Bottle Opener'),
     image: "db/seeds/KTBO_PRODUCT_SHOT_01_SQUARE.jpg",
     role: "Product Page Shot"
-  },{
-    product_id: 2,
+  },
+  {
+    product: Product.find_by(name: 'iPhone 7 Case'),
     image: "db/seeds/KTBO_PRODUCT_SHOT_01_SQUARE.jpg",
     role: "Product Page Shot"
-  }
-]
+  }]
 
 picture_params.each do |picture_param|
   puts "uploading a picture for product #{picture_param[:product_id]}"
@@ -294,105 +293,107 @@ end
 
 
 
-order_params = [{
-  user_id: User.find_by(first_name: 'customer 1'),
-  staff_id: User.find_by(first_name: 'staff 1'),
-  status: "pending",
-  address_id: Address.first
-},
-{
-  user_id: User.find_by(first_name: 'customer 2'),
-  staff_id: User.find_by(first_name: 'staff 2'),
-  status: "pending",
-  address_id: Address.first
-}]
+# order_params = [{
+#   user_id: User.find_by(first_name: 'customer 1'),
+#   staff_id: User.find_by(first_name: 'staff 1'),
+#   status: "pending",
+#   address_id: Address.first
+# },
+# {
+#   user_id: User.find_by(first_name: 'customer 2'),
+#   staff_id: User.find_by(first_name: 'staff 2'),
+#   status: "pending",
+#   address_id: Address.first
+# }]
 
-order_params.each do |order_param|
-  Order.find_or_create_by(order_param)
-end
+# order_params.each do |order_param|
+#   Order.find_or_create_by(order_param)
+# end
 
-order_item_params = [{
-  quantity: 200,
-  product_id: 4,
-  status: "printing",
-},
-{
-  quantity: 500,
-  product_id: 1,
-  status: "printing",
-},
-{
-  quantity: 100,
-  product_id: 3,
-  status: "printing",
-},
-{
-  quantity: 250,
-  product_id: 6,
-  status: "printing",
-},
-{
-  quantity: 1000,
-  product_id: 7,
-  status: "printing",
-},
-{
-  quantity: 500,
-  product_id: 2,
-  status: "printing",
-}]
+# order_item_params = [{
+#   quantity: 200,
+#   product_id: 4,
+#   status: "printing",
 
-order_item_params.each do |order_item_param|
-  OrderItem.find_or_create_by(order_item_param)
-end
+
+# },
+# {
+#   quantity: 500,
+#   product_id: 1,
+#   status: "printing",
+# },
+# {
+#   quantity: 100,
+#   product_id: 3,
+#   status: "printing",
+# },
+# {
+#   quantity: 250,
+#   product_id: 6,
+#   status: "printing",
+# },
+# {
+#   quantity: 1000,
+#   product_id: 7,
+#   status: "printing",
+# },
+# {
+#   quantity: 500,
+#   product_id: 2,
+#   status: "printing",
+# }]
+
+# order_item_params.each do |order_item_param|
+#   OrderItem.find_or_create_by(order_item_param)
+# end
 
 price_break_params = [{
-  product_id: 1,
+  product: Product.find_by(name: 'Key Tag Bottle Opener'),
   quantity: 5,
   price_cents: 995,
 },
 {
-  product_id: 1,
+  product: Product.find_by(name: 'Key Tag Bottle Opener'),
   quantity: 10,
   price_cents: 680,
 },
 {
-  product_id: 1,
+  product: Product.find_by(name: 'Key Tag Bottle Opener'),
   quantity: 25,
   price_cents: 575,
 },
 {
-  product_id: 1,
+  product: Product.find_by(name: 'Key Tag Bottle Opener'),
   quantity: 50,
   price_cents: 280,
 },
 {
-  product_id: 1,
+  product: Product.find_by(name: 'Key Tag Bottle Opener'),
   quantity: 100,
   price_cents: 195,
 },
 {
-  product_id: 1,
+  product: Product.find_by(name: 'Key Tag Bottle Opener'),
   quantity: 500,
   price_cents: 175,
 },
 {
-  product_id: 1,
+  product: Product.find_by(name: 'Key Tag Bottle Opener'),
   quantity: 1000,
   price_cents: 169,
 },
 {
-  product_id: 1,
+  product: Product.find_by(name: 'Key Tag Bottle Opener'),
   quantity: 2000,
   price_cents: 165,
 },
 {
-  product_id: 1,
+  product: Product.find_by(name: 'Key Tag Bottle Opener'),
   quantity: 5000,
   price_cents: 152,
 },
 {
-  product_id: 1,
+  product: Product.find_by(name: 'Key Tag Bottle Opener'),
   quantity: 10000,
   price_cents: 139,
 }]
