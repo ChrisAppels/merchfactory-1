@@ -13,6 +13,7 @@ class OrdersController < ApplicationController
     @order.address_id = current_user.address_ids.first
     @order.save!
     redirect_to order_path(:id)
+    # redirect_to new_order_payment_path(@order)
   end
 
   def show
