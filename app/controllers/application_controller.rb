@@ -7,12 +7,14 @@ class ApplicationController < ActionController::Base
   def session_cart
     if session[:shopping_cart_id]
       begin
-        ShoppingCart.find(session[:shopping_cart_id])
+        @shopping_cart = ShoppingCart.find(session[:shopping_cart_id])
       rescue ActiveRecord::RecordNotFound
-        ShoppingCart.create
+        @shopping_cart = ShoppingCart.create
       end
     else
-      ShoppingCart.create
+      @shopping_cart = ShoppingCart.create
     end
+    session[:shopping_cart_id] = @shopping_cart.id
+    @shopping_cart
   end
 end

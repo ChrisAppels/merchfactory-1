@@ -4,6 +4,8 @@ class OrdersController < ApplicationController
   end
 
   def create
+    return redirect_to new_user_session_url unless current_user
+
     @order = Order.new
     total = 0
     shoppingcart = session_cart

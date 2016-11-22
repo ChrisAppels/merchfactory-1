@@ -44,7 +44,7 @@
 
           <%= link_to shopping_cart_path(session_cart) do %>
               <i class="fa fa-shopping-cart"></i>
-              <span><%= session_cart.order_items.count %></span>
+              <span class="js-shopping-cart-counter"><%= session_cart.order_items.count %></span>
           <% end %>
 
 

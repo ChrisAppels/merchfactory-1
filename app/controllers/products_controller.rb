@@ -16,7 +16,6 @@ class ProductsController < ApplicationController
 
   def show
     @shopping_cart = session_cart
-    session[:shopping_cart_id] = @shopping_cart.id
     @product = Product.find(params[:id])
     @order_item = OrderItem.new
   end
