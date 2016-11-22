@@ -3,32 +3,11 @@
 
 
 <div class="col-xs-12 col-sm-4">
-  <!-- <a href="link_to product_path"> -->
+  <%= link_to(product) do %>
     <div class="product-card" style= "background-image: linear-gradient(rgba(0,0,0,0.0) 70%, rgba(0,0,0,0.8)), url('<%= cl_image_path product.pictures.first.image, height: 600, width: 600, crop: :fill %>');">
       <div class= "product-card-name">
        <%= product.name %>
       </div>
     </div>
-  <!-- </a> -->
+    <% end %>
 </div>
-
-
-
-
-
-
-<!-- LE WAGON CODE -->
-<!-- ***************************** -->
-
-<!--
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
-  <div class="card-category">Popular</div>
-  <div class="card-description">
-    <h2>Some stuff</h2>
-    <p>Very cool stuff, useful and smart</p>
-  </div>
-  <img class="card-user avatar" src="user.jpg">
-  <a class="card-link" href="#" ></a>
-</div>
- -->
-<!-- ***************************** -->

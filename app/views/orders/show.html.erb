@@ -3,11 +3,17 @@
 <%= @order.order_items.each do |order_item| %>
 <p><%= "#{order_item.product.name}" %></p>
 <% end %>
-<%= form_tag orders_path, :id => 'pay_form' do %>
-  <%= hidden_field_tag 'order_id', @order.id %>
-  <%= link_to 'submit', "new_order_payment_path(@order)", :onclick => "$('#pay_form').submit()" %>
+
+<%= link_to 'SUBMIT', new_order_payment_path(@order), class: "btn-main"  %>
+
+
+
+
+<%#= form_tag orders_path, :id => 'pay_form' do %>
+  <%#= hidden_field_tag 'order_id', @order.id %>
+  <%#= link_to 'submit', "new_order_payment_path(@order)", :onclick => "$('#pay_form').submit()" %>
 
 
   <%#= submit_tag 'Purchase', class: 'btn btn-primary' %>
-<% end %>
+<%# end %>
 
