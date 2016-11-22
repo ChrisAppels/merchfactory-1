@@ -20,6 +20,8 @@
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><%= link_to "All Productssss", products_path %>
+            </li>
             <% Category.all.each do |category| %>
             <li>
               <%= link_to category_products_path(category) do %>
@@ -38,10 +40,14 @@
         <li><a href="#">ABOUT</a></li>
         <li><a href="#">WHOLESALE</a></li>
         <li>
-          <a href="#" id="shopping-cart">
-            <i class="fa fa-shopping-cart"></i>
-            <span><%= session_cart.order_items.count %></span>
-          </a>
+
+
+          <%= link_to shopping_cart_path(session_cart) do %>
+              <i class="fa fa-shopping-cart"></i>
+              <span><%= session_cart.order_items.count %></span>
+          <% end %>
+
+
         </li>
         <li>
           <% if user_signed_in? %>
