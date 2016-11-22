@@ -4,7 +4,7 @@ class OrderItemsController < ApplicationController
   end
 
   def create
-    @shopping_cart = session_cart
+    session_cart
     @order_item = OrderItem.new(order_item_params)
     @order_item.product = Product.find(params[:product_id])
     @order_item.orderable = @shopping_cart # ShoppingCart.find(params[:shopping_cart_id])
