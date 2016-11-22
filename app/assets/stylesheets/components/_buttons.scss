@@ -15,13 +15,17 @@
   font-size: 18px;
   line-height: 18px;
 
+  &.small {
+    width: 150px;
+  }
+
 }
 
 
 .btn-main:hover {
   opacity: 1;
   text-decoration: none;
-  color: #999999;
+  color: #4c4d48;
 }
 .btn-treehouse {
   color: white;
