@@ -1,9 +1,12 @@
 
 <nav>
   <div class="top-nav">
-    <a href="/">
-      <%= image_tag('logo_svg.svg') %>
-    </a>
+
+
+      <%= link_to root_path do %>
+          <%= image_tag('logo_svg.svg') %>
+      <% end %>
+
     <div>
       <p>Put your brand in someone's hand</p>
       <p><strong>Grow your business with Merch Factory's high value marketing products</strong></p>
@@ -15,7 +18,7 @@
         <li id="nav-logo" class="hide"><a href="#"><%= image_tag('logo_svg.svg') %></a></li>
         <li>
         <div class="dropdown" id="dropdown-products">
-        <a href="#" class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <a  class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Products
             <span class="caret"></span>
           </a>
