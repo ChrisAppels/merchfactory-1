@@ -5,13 +5,19 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new
+    total = 0
     shoppingcart = session_cart
     @order.order_items = shoppingcart.order_items
     @order.user_id = current_user.id
     @order.staff_id = User.second.id
     @order.status = "pending"
     @order.address_id = current_user.address_ids.first
-    @order.save!
+    @order.order_items.each do |order_item|
+      total += order_item.totalprice
+    end
+    @order.amount_cents = total
+    @order.save
+    shoppingcart.destroy
     redirect_to order_path(:id)
   end
 

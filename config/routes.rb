@@ -1,18 +1,16 @@
 Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
-  get 'orders/checkout'
 
-  get 'orders/payment'
-
-  get 'orders/confirmation'
 
   root to: 'pages#home'
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :products, only: [:index, :show]
 
-  resources :orders, only: [:create, :show, :index]
+  resources :orders, only: [:create, :show, :index] do
+    resources :payments, only: [:new, :create]
+  end
 
   resources :shopping_carts do [:create, :show, :index]
     resources :order_items, only: [:create ]
