@@ -2,13 +2,14 @@ Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
 
+  get '/orders/checkout'
 
   root to: 'pages#home'
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :products, only: [:index, :show]
 
-  resources :orders, only: [:create, :show, :index] do
+  resources :orders, only: [:create, :show, :index, :chekout] do
     resources :payments, only: [:new, :create]
   end
 
