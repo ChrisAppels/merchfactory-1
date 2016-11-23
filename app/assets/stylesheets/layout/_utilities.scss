@@ -44,3 +44,13 @@ font-size: 12px;
 }
 
 .show-inline { display: inline-block !important; }
+
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1;
+}

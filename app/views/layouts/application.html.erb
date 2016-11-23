@@ -28,11 +28,12 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
-<body>
+<body class="site">
   <%= render 'layouts/shared/navbar' %>
   <%= render 'shared/flashes' %>
 
-   <div id="page-content">
+  <main id="page-content" class="site-content">
     <%= yield %>
-   <%= render 'shared/footer' %>
+  </main>
+  <%= render 'shared/footer' %>
 </html>
