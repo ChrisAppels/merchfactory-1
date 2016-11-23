@@ -1,8 +1,48 @@
 <h1>Shopping Cart</h1>
 
-<% @order_items.each do |order_item| %>
-total = []
-<p><%= "#{order_item.product.name},   #{order_item.quantity},   *   #{order_item.product.item_price_for_quantity(order_item.quantity).price_cents}   #{order_item.product.sum_price_for_quantity(order_item.quantity)} " %></p>
-<%= link_to 'Checkout', orders_path, method: 'post' %>
-<% end %>
+<div class= "shopping-cart-container">
 
+  <div class= "row-item">
+    <div class= "product-name">
+      <h2>Product Name</h2>
+    </div>
+    <div class= "row-details">
+      <div class= "quantity">
+        <h2>Quantity</h2>
+      </div>
+      <div class= "price-per-unit">
+        <h2>Price/Unit</h2>
+      </div>
+      <div class= "price">
+        <h2>Total Price</h2>
+      </div>
+    </div>
+  </div>
+
+
+  <% @order_items.each do |order_item| %>
+
+  <div class= "row-item">
+    <div class= "product-name">
+    <h2><%="#{order_item.product.name}"%></h2>
+    </div>
+    <div class= "row-details">
+      <div class= "quantity">
+      <h2><%="#{order_item.quantity}"%></h2>
+      </div>
+      <div class= "price-per-unit">
+      <h2><%="€#{number_with_precision(order_item.product.item_price_for_quantity(order_item.quantity).price_cents/100.00, precision: 2)}"%></h2>
+      </div>
+      <div class= "price">
+      <h2><%="€#{number_with_precision(order_item.totalprice, precision: 2)}"%></h2>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<%= link_to orders_path, method: 'post' do %>
+  <div class='btn-main large'>
+    Checkout
+  </div>
+<% end %>
