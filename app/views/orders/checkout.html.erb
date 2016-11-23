@@ -1,2 +1,16 @@
-<h1>Thank you for your order !</h1>
-<p>Find me in app/views/orders/checkout.html.erb</p>
+<div class="validate">
+<i class="fa fa-check-circle" aria-hidden="true"></i>
+</div>
+<div class="container-thanks">
+   <h3>Thank you <%= current_user.first_name %> for your order.</h3>
+     <p></p>
+       <p></p>
+   <h2> An email with all the details has been sent to </h2><span><%= current_user.email %></span>
+      <p></p>
+        <p></p>
+   <h1>We will shortly prepare your order and send it to your address ! </h1>
+<div class="checkout-button">
+  <%= link_to "Home", '/', class: "btn-main small-big" %>
+
+</div >
+</div>
