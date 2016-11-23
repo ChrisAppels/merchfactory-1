@@ -129,6 +129,20 @@ nav .bottom-nav .customer-navigation li a:hover {
 
 }
 
+#search-button {
+border: none;
+background-color: transparent;
+}
+
+#search-button:hover {
+  color: $merchfactory_pink;
+  text-decoration: none;
+}
+
+// button.style {
+//     background-color: transparent;
+//     border: none;
+// }
 
 
 /////// DROPDOWN MECHANISME ////////
