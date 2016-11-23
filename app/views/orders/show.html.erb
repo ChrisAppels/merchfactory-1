@@ -1,19 +1,39 @@
-<h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
-<%= @order.order_items.each do |order_item| %>
-<p><%= "#{order_item.product.name}" %></p>
-<% end %>
+<div id="page-content">
+  <div class="container-log-in">
+    <div class="checkout-container">
 
-<%= link_to 'SUBMIT', new_order_payment_path(@order), class: "btn-main"  %>
+    <h1>Pay for your order</h1>
+    <%= form_tag order_payments_path(@order) do %>
 
+  <div class="align-center table-checkout">
+    <table class="table table-hover table-checkout">
+      <tr>
+        <td class="text-right">Email:</td>
+        <td class="text-left"><%= @order.user.email %></td>
+      </tr>
+      <tr>
+        <td class="text-right">Name:</td>
+        <td class="text-left"><%= "#{@order.user.first_name}" %><%= "#{@order.user.last_name}" %></td>
+      </tr>
+      <tr>
+        <td class="text-right">Date:</td>
+        <td class="text-left"><%= Time.now.strftime("%d/%m/%Y") %></td>
+      </tr>
+      <tr>
+        <td class="text-right">Amount:</td>
+        <td class="text-left"><%= humanized_money_with_symbol(@order.amount_cents) %></td>
+      </tr>
+    </table>
+ </div>
 
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+      data-name="My Order"
+      data-description="MERCH-Factory Custom Merchandise"
+      data-amount="@order.amount_cents"
+      data-currency="eur"></script>
 
-
-<%#= form_tag orders_path, :id => 'pay_form' do %>
-  <%#= hidden_field_tag 'order_id', @order.id %>
-  <%#= link_to 'submit', "new_order_payment_path(@order)", :onclick => "$('#pay_form').submit()" %>
-
-
-  <%#= submit_tag 'Purchase', class: 'btn btn-primary' %>
-<%# end %>
-
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -2,6 +2,12 @@
   visibility: hidden;
 }
 
+.stripe-button-el span{
+  color: red !important;
+  background-image: none !important;
+  background-color: green !important;
+}
+
 .btn-main {
   background-color: $merchfactory_pink;
   height: 36px;
