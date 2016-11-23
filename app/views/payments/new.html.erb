@@ -16,11 +16,8 @@
         <span class="padding-bottom">Amount: <%= humanized_money_with_symbol(@order.amount_cents) %></span><br>
       </label>
     </article> -->
-
-    <table style="width:40%" class="table table-hover span4 offset4" >
-<!--       <tr>
-        <h1>Pay for your order</h1>
-      </tr> -->
+  <div class="align-center table-checkout">
+    <table class="table table-hover table-checkout">
       <tr>
         <td class="text-right">Email:</td>
         <td class="text-left"><%= @order.user.email %></td>
@@ -38,6 +35,7 @@
         <td class="text-left"><%= humanized_money_with_symbol(@order.amount_cents) %></td>
       </tr>
     </table>
+ </div>
 
 
 
