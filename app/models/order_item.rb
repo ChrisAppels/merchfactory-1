@@ -4,7 +4,6 @@ class OrderItem < ApplicationRecord
   has_many :order_item_designs
 
 def totalprice
-  self.quantity * self.product.item_price_for_quantity(self.quantity).price_cents
+  (self.quantity * self.product.item_price_for_quantity(self.quantity).price_cents) / 100.0
 end
-
 end
