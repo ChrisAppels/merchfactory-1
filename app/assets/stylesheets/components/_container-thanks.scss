@@ -1,0 +1,12 @@
+.container-thanks {
+  text-align: center;
+  padding: 50px;
+  font-size: 30px;
+  &.h3 {
+    padding-bottom: 20px;
+  }
+  &.h1 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
