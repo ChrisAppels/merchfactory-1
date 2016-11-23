@@ -58,7 +58,7 @@
           </div>
         </div>
         <div class= "add-to-cart" >
-          <%= f.submit "Add to cart", :class => 'btn-main' %>
+          <%= f.submit "Add to cart", :class => 'btn-main', 'data-toggle': 'modal', 'data-target': '#modal-add-to-cart' %>
 
         </div>
 
@@ -78,3 +78,24 @@
 </div>
 
 
+<div class="modal fade" id="modal-add-to-cart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Successfully Added</h4>
+      </div>
+      <div class="modal-body" id="product-success">
+      <% if @order_item.product %>
+        You added <%= @order_item.quantity %> <%= pluralize(@order_item.product.name, @order_item.quantity) %>
+      <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Continue browsing</button>
+        <%= link_to shopping_cart_path do %>
+        <button type="button" class="btn btn-primary">Proceed to checkout</button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

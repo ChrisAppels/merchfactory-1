@@ -1,3 +1,3 @@
 $('span.js-shopping-cart-counter').text(<%= @shopping_cart.order_items.count %>)
-
-
+console.log("ucu")
+$('#product-success').text(" You added <%= pluralize(@order_item.quantity, @order_item.product.name) %>")
