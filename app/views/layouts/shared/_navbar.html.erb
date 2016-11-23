@@ -1,12 +1,9 @@
 
 <nav>
   <div class="top-nav">
-
-
       <%= link_to root_path do %>
           <%= image_tag('logo_svg.svg') %>
       <% end %>
-
     <div>
       <p>Put your brand in someone's hand</p>
       <p><strong>Grow your business with Merch Factory's high value marketing products</strong></p>
@@ -19,11 +16,11 @@
         <li>
         <div class="dropdown" id="dropdown-products">
           <a  class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Products
+            PRODUCTS
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><%= link_to "All Productssss", products_path %>
+            <li><%= link_to "All Products", products_path %>
             </li>
             <% Category.all.each do |category| %>
             <li>
@@ -35,8 +32,12 @@
           </ul>
         </div>
         </li>
-        <li><input type="text" class= "search-bar" placeholder ="search" ></li>
-        <li><a href="#"><i class="fa fa-search"></i></a></li>
+        <li>
+        <form action="/products" method="get">
+            <input type="text" class="search-bar" name="query" placeholder="search product">
+            <button type="submit" id="search-button"><i class="fa fa-search"></i></button>
+        </form>
+        </li>
       </ul>
       <ul class="customer-navigation">
         <li><a href="#">CONTACT</a></li>
