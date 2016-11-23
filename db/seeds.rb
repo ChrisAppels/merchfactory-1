@@ -30,7 +30,7 @@ user_params = [{
   avatar: "http://static4.businessinsider.com/image/56c640526e97c625048b822a-480/donald-trump.jpg"
 },
 {
-  first_name: "staff 1",
+  first_name: "Pieter",
   last_name: "Jansnen",
   email: "staff1@gmail.com",
   phone: "9873254987",
@@ -303,7 +303,7 @@ end
 
 
 address_params = [{
-  user_id: User.find_by(first_name: 'customer 1'),
+  user_id: User.find_by(first_name: 'Pieter'),
   unit_number: "5",
   street_number: "28",
   street_name: "Down",
@@ -313,7 +313,7 @@ address_params = [{
   country: "Australia"
 },
 {
-  user_id: User.find_by(first_name: 'customer 1'),
+  user_id: User.find_by(first_name: 'Pieter'),
   unit_number: "3",
   street_number: "420",
   street_name: "Herengracht",
