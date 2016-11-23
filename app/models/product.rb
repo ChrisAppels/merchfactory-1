@@ -7,9 +7,9 @@ class Product < ApplicationRecord
   has_many :price_breaks
   has_many :product_categories
 
- scope :query, lambda { |query|
-      where('name ILIKE ?', "%#{query}%")
-     }
+  scope :query, ->(query){
+    where('name ILIKE ?', "%#{query}%")
+  }
 
   def item_price_for_quantity(quantity)
     price_breaks.where("quantity <= ?", quantity).order(:quantity).last
