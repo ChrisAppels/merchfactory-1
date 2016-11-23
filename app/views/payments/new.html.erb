@@ -1,17 +1,59 @@
-<h1>Pay for your order</h1>
-<%= form_tag order_payments_path(@order) do %>
-  <article>
-    <label class="amount">
-      <span>Amount: Dickbut</span>
-    </label>
-  </article>
+<div id="page-content">
+  <div class="container-log-in">
+    <div class="checkout-container">
+
+    <h2>Pay for your order</h1>
+    <%= form_tag order_payments_path(@order) do %>
+    <article>
+
+<!--       <label class="amount">
+      <span class="padding-bottom">Email: <%= @order.user.email %></span><br>
+        <span class="padding-bottom">Name: <%= "#{@order.user.first_name}" %>
+                                           <%= "#{@order.user.last_name}" %>
+        </span><br>
+        <span class="padding-bottom">Date: <%= Time.now.strftime("%d/%m/%Y") %>
+</span><br>
+        <span class="padding-bottom">Amount: <%= humanized_money_with_symbol(@order.amount_cents) %></span><br>
+      </label>
+    </article> -->
+
+    <table style="width:40%" class="table table-hover span4 offset4" >
+<!--       <tr>
+        <h1>Pay for your order</h1>
+      </tr> -->
+      <tr>
+        <td class="text-right">Email:</td>
+        <td class="text-left"><%= @order.user.email %></td>
+      </tr>
+      <tr>
+        <td class="text-right">Name:</td>
+        <td class="text-left"><%= "#{@order.user.first_name}" %><%= "#{@order.user.last_name}" %></td>
+      </tr>
+      <tr>
+        <td class="text-right">Date:</td>
+        <td class="text-left"><%= Time.now.strftime("%d/%m/%Y") %></td>
+      </tr>
+      <tr>
+        <td class="text-right">Amount:</td>
+        <td class="text-left"><%= humanized_money_with_symbol(@order.amount_cents) %></td>
+      </tr>
+    </table>
 
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-name="My Teddy"
-    data-description="Dickbut"
-    data-amount="89009"
-    data-currency="eur"></script>
 
-<% end %>
+
+
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+      data-name="My Order"
+      data-description="MERCH-Factory Custom Merchandise"
+      data-amount="@order.amount_cents"
+      data-currency="eur"></script>
+
+<!--       <button id="customButton" class="btn-main">
+    <span style="display: block; min-height: 30px;">Pay with Card</span>
+</button> -->
+      <% end %>
+    </div>
+  </div>
+</div>
