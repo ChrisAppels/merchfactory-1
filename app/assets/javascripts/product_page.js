@@ -1,5 +1,4 @@
 
-
 $(document).ready(function() {
  $('#order_item_quantity').keyup(function(event) {
    var quantity = $("#order_item_quantity").val();
