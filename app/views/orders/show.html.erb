@@ -5,15 +5,20 @@
     <h1>Pay for your order</h1>
     <%= form_tag order_payments_path(@order) do %>
 
-  <div class="align-center table-checkout">
+  <div class="align-center table-checkout col-md-6">
+  <h2>Your personal info</h2>
     <table class="table table-hover table-checkout">
       <tr>
         <td class="text-right">Email:</td>
         <td class="text-left"><%= @order.user.email %></td>
       </tr>
       <tr>
-        <td class="text-right">Name:</td>
-        <td class="text-left"><%= "#{@order.user.first_name}" %><%= "#{@order.user.last_name}" %></td>
+        <td class="text-right">First Name:</td>
+        <td class="text-left"><%= "#{@order.user.first_name }" %></td>
+      </tr>
+      <tr>
+        <td class="text-right">Last Name:</td>
+        <td class="text-left"><%= "#{@order.user.last_name}" %></td>
       </tr>
       <tr>
         <td class="text-right">Date:</td>
@@ -26,12 +31,58 @@
     </table>
  </div>
 
+  <div class=" col-md-6">
+  <h2 class="text-center">Check your shipping address</h2>
+    <form class="form-horizontal">
+      <div class="form-group row text">
+      <tr>
+        <td class="text-left"><label class="label-left" for="street">Street Name:</label></td>
+        <td><input class="text-center" type='text' name='street' size='25' value=<%= "#{current_user.addresses.second.street_name}" %> /></td>
+      </tr>
+      </div>
+
+
+      <div class="form-group row text">
+      <tr>
+       <td class="text-left" ><label class="label-left" for="number">House Number:</label></td>
+       <td><input class="text-center" type='text' name='number' size='25' value=<%= "#{current_user.addresses.second.street_number}" %> /></td>
+      </tr>
+      </div>
+
+
+      <div class="form-group row text">
+      <tr>
+        <td class="text-left" ><label class="label-left" for="city">City:</label></td>
+        <td><input class="text-center" type='text' name='city' size='25' value=<%= "#{current_user.addresses.second.city}" %> /></td>
+      </tr>
+      </div>
+
+
+      <div class="form-group row text">
+      <tr>
+        <td class="text-left" ><label class="label-left" for="postal code">Postal Code:</label></td>
+        <td><input class="text-center" type='text' name='postal code' size='25' value=<%= "#{current_user.addresses.second.post_code}" %> /></td>
+      </tr>
+      </div>
+
+
+      <div class="form-group row text">
+      <tr>
+        <td class="text-left" ><label class="label-left" for="country">Country:</label></td>
+        <td><input class="text-center" type='text' name='country' size='25' value=<%= "#{current_user.addresses.second.country}" %> /></td>
+      </tr>
+      </div>
+    </form>
+  </div>
+
+      <div>
       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
       data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
       data-name="My Order"
       data-description="MERCH-Factory Custom Merchandise"
       data-amount="@order.amount_cents"
       data-currency="eur"></script>
+      </div>
 
       <% end %>
     </div>
