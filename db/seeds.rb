@@ -256,6 +256,29 @@ picture_params.each do |picture_param|
 end
 
 
+feature_params = [{
+  product_id: Product.find_by(name: 'Key Tag Bottle Opener').id,
+  description: "65mm long x 40mm wide x 2.4mm thick. Weight = 35g",
+},
+{
+  product_id: Product.find_by(name: 'Key Tag Bottle Opener').id,
+  description: "Made from Heat-Treated Stainless Steel",
+},
+{
+  product_id: Product.find_by(name: 'Key Tag Bottle Opener').id,
+  description: "Super durable, high resolution print",
+},
+{
+  product_id: Product.find_by(name: 'Key Tag Bottle Opener').id,
+  description: "Avaible with variable data, unique barcodes, member names/numbers",
+}]
+
+
+
+feature_params.each do |feature_param|
+  Feature.find_or_create_by(feature_param)
+end
+
 
 #*************************************************************
 
