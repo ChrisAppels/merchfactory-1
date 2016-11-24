@@ -1,4 +1,6 @@
-<h1>Shopping Cart</h1>
+  <div class="col-sm-4 col-sm-offset-5" >
+    <h1> Shopping Cart</h1>
+  </div>
 
 <div class= "shopping-cart-container">
 
@@ -22,27 +24,56 @@
 
   <% @order_items.each do |order_item| %>
 
+
   <div class= "row-item">
     <div class= "product-name">
-    <h2><%="#{order_item.product.name}"%></h2>
+      <h2><%="#{order_item.product.name}"%></h2>
     </div>
     <div class= "row-details">
       <div class= "quantity">
-      <h2><%="#{order_item.quantity}"%></h2>
+        <h2><%="#{order_item.quantity}"%></h2>
       </div>
       <div class= "price-per-unit">
-      <h2><%="€#{number_with_precision(order_item.product.item_price_for_quantity(order_item.quantity).price_cents/100.00, precision: 2)}"%></h2>
+        <h2><%="€#{number_with_precision(order_item.product.item_price_for_quantity(order_item.quantity).price_cents/100.00, precision: 2)}"%></h2>
       </div>
       <div class= "price">
-      <h2><%="€#{number_with_precision(order_item.totalprice, precision: 2)}"%></h2>
+        <h2><%="€#{number_with_precision(order_item.totalprice, precision: 2)}"%></h2>
+      </div>
+      <div>
+        <%= link_to shopping_cart_order_item_path(@shopping_cart, order_item), method: :delete do %>
+        <i class="fa fa-window-close" id="delete-item"></i>
+        <% end %>
       </div>
     </div>
   </div>
   <% end %>
+
+  <div class= "row-item">
+    <div class= "product-name">
+      <h2></h2>
+    </div>
+    <div class= "row-details">
+      <div class= "quantity">
+        <h2></h2>
+      </div>
+      <div class= "price-per-unit">
+        <h2></h2>
+      </div>
+      <div class= "price">
+        <div class= "Total">
+        Total Amount: € <%= number_with_precision(@total_price, precision: 2) %>
+        </div>
+      </div>
+        <div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<%= link_to orders_path, method: 'post' do %>
-  <div class='btn-main large'>
+<div class="row-item row-checkout">
+  <%= link_to orders_path, method: 'post' do %>
+  <div class='btn-main large' id="checkout">
     Checkout
   </div>
-<% end %>
+  <% end %>
+</div>
