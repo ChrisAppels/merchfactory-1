@@ -138,9 +138,11 @@
       <% end %>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Continue browsing</button>
+        <%= link_to products_path do %>
+        <button type="button" class="btn btn-default">Continue browsing</button>
+        <% end %>
         <%= link_to shopping_cart_path do %>
-        <button type="button" class="btn btn-primary">Proceed to checkout</button>
+        <button type="button" class="btn btn-primary">Proceed to cart</button>
         <% end %>
       </div>
     </div>

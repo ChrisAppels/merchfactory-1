@@ -326,7 +326,7 @@ end
 
 
 address_params = [{
-  user_id: User.find_by(first_name: 'Pieter'),
+  user_id: (User.find_by(first_name: 'Pieter')).id,
   unit_number: "5",
   street_number: "28",
   street_name: "Down",
@@ -336,7 +336,7 @@ address_params = [{
   country: "Australia"
 },
 {
-  user_id: User.find_by(first_name: 'Pieter'),
+  user_id: (User.find_by(first_name: 'Pieter')).id,
   unit_number: "3",
   street_number: "420",
   street_name: "Herengracht",
