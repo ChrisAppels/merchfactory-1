@@ -25,8 +25,7 @@ $(document).ready(function() {
     }
     var total_price = quantity * chosen_bracket.price_cents / 100;
     total_price = total_price.toFixed(2);
-    /////////////total price
-    console.log(total_price);
+
 
     var unit_price = (chosen_bracket.price_cents / 100.00).toFixed(2)
 
