@@ -2,3 +2,91 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+ .container-left {
+  text-align: left;
+  // padding-top: 15px;
+  // padding-right: 10px;
+  // padding-left: 5px;
+  margin-bottom: 80px;
+  min-height: 140px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  i {
+    margin-right: 20px;
+  }
+}
+.container-right {
+  text-align: right;
+  // padding-top: 15px;
+  // padding-right: 5px;
+  // padding-left: 10px;
+  margin-bottom: 80px;
+  min-height: 140px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  i {
+    margin-right: 20px;
+  }
+}
+
+.test {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.flex-welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-cards {
+  width: 96%;
+  text-align: center;
+  padding: 10px;
+  margin: auto;
+  margin-bottom: 80px;
+}
+.product-card:hover {
+  box-shadow: 8px 8px 5px grey;
+  transition: box-shadow 0.6s ease-in-out;
+}
+
+.fa-handshake-o {
+  font-size: 70px;
+  text-align: center;
+}
+.fa-tags {
+  font-size: 70px;
+  text-align: center;
+}
+.homepage-button {
+  padding: 10px 0px;
+}
+
+.homepage-product-cta{
+  position: relative;
+  top: 15px;
+}
+
+#header-homepage {
+  font-size: 40px;
+  margin-top: 80px
+}
+
+#home-final-slogan {
+  color: #fc4496;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 1px #fc4496;
+  margin: auto;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 80px;
+}
+

@@ -1,4 +1,46 @@
 <%= render 'layouts/shared/banner' %>
+<div id="wrap">
+  <div class="container text-center">
+    <h3 id="header-homepage">Welcome to Merch Factory</h3>
+  </div>
+  <div class="container">
+    <div class="row">
+     <div class="col-xs-6">
+
+      <div class="container-left">
+       <i class="fa fa-handshake-o" aria-hidden="true"></i>
+       <div>
+        <em>Merch Factory will assist you in order to make your company generate more traction.</em>
+        <em>Upload easily your designs and let us bring them to life !</em>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-6">
+    <div class="container-right">
+     <i class="fa fa-tags" aria-hidden="true"></i>
+     <div class="flex-welcome">
+       <em>Find now the right support for your product's brand.</em>
+       <em>See our Products.</em>
+       <div class="homepage-button">
+         <%= link_to "Products", '/products', class: "btn-main small-big homepage-product-cta" %>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+</div>
+<div class="blank-spacing"></div>
+<div class="container">
+  <div class="row">
+    <% @products.each do |product| %>
+    <%= render partial: "products/card", locals: {product: product} %>
+    <% end %>
+  </div>
+</div>
+<p id="home-final-slogan">
+  Put your brand in someone's hand
+</p>
+</div>
 
 
 

@@ -10,6 +10,8 @@ class Product < ApplicationRecord
   scope :query, ->(query){
     where('name ILIKE ?', "%#{query}%")
   }
+  scope :latest, -> { order(created_at: :desc) }
+  scope :limit_for_homepage, -> { limit(3)}
 
   def item_price_for_quantity(quantity)
     price_breaks.where("quantity <= ?", quantity).order(:quantity).last
