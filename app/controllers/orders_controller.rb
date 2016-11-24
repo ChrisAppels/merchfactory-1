@@ -20,7 +20,7 @@ class OrdersController < ApplicationController
     @order.amount_cents = total
     @order.save
     shoppingcart.destroy
-    redirect_to order_path(:id)
+    redirect_to order_path(@order)
   end
 
   def show
