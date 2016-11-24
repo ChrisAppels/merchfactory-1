@@ -18,6 +18,7 @@ class ProductsController < ApplicationController
     @shopping_cart = session_cart
     @product = Product.find(params[:id])
     @order_item = OrderItem.new
+    @price_breaks = @product.price_breaks.to_json
   end
 end
 

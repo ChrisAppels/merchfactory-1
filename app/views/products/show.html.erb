@@ -1,81 +1,128 @@
+
+
+<%= form_for [@shopping_cart, @order_item], remote: true do |f| %>
 <div class= "product-page-container">
   <div class= "product-page-split-left">
     <% @product.pictures.each do |picture| %>
     <div class= "product_image_large">
-      <%= cl_image_tag picture.image, height: 550, width: 550, crop: :fill %>
+      <%= cl_image_tag picture.image, height: 580, width: 580, crop: :fill %>
     </div>
   <%end%>
   </div>
-  <%= form_for [@shopping_cart, @order_item], remote: true do |f| %>
+
+
+
   <div class= "product-page-split-right">
+
+
+
     <div class= "product-info">
       <h1><%= @product.name%></h1>
 
-  <p><%= @product.description%></p>
+        <p><%= @product.description%></p>
     </div>
-    <div class= "product-order-form">
-      <div class= "price-breaks">
-        <div class= "quantity-price-breaks">
-        <p>Qty</p>
-        <% @product.price_breaks.each do |pricebreak| %>
-        <div class= "quantity_list_item"><%= "#{pricebreak.quantity}" %></div>
-        <% end %>
-        </div>
-        <div class= "price_per_unit">
-        <p>Price/Unit</p>
-        <% @product.price_breaks.each do |pricebreak| %>
-        <div class= "price_per_unit_list_item"><%= "$#{pricebreak.price_cents}" %></div>
-        <% end %>
-        </div>
-      </div>
+        <div class= "product-features">
+          <% @product.features.each do |feature| %>
 
-      <div class= "order-details">
+          <p><%= feature.description %></p>
+          <% end %>
+        </div>
 
-        <div class= "order-form">
-        <div class= "user-instruction">
-          <p>To place an order:</p>
+
+    <div class= "product-page-split-right-bottom">
+      <div class= "product-order-form">
+        <div class= "price-breaks">
+          <div class= "quantity-price-breaks">
+          <p>Qty</p>
+          <% @product.price_breaks.each do |pricebreak| %>
+          <div class= "quantity_list_item">
+            <p>
+              <%= "#{pricebreak.quantity}" %>
+            </p>
+          </div>
+          <% end %>
+          </div>
+          <div class= "price_per_unit">
+          <p>Price/Unit</p>
+          <% @product.price_breaks.each do |pricebreak| %>
+          <div class= "price_per_unit_list_item">
+            <p>
+              <%= "€#{number_with_precision(pricebreak.price_cents/100.00, precision: 2)}" %></div>
+            </p>
+          <% end %>
           </div>
         </div>
-        <div class= "download-templates">
-        <div class= "user-instruction">
-          <h1>1. Download a design template</h1>
-          </div>
-        </div>
-        <div class= "upload-templates">
+        <div class= "order-details">
+          <div class= "order-form">
           <div class= "user-instruction">
-          <h1>2. Upload your design</h1>
+            <p>To place an order:</p>
+            </div>
+          </div>
+
+          <div class= "download-templates">
+            <div class= "user-instruction">
+              <h1>1. Download a design template</h1>
+            </div>
+            <div class= "design-template-file">
+
+            </div>
+            <div class= "design-template-file">
+
+            </div>
+          </div>
+
+
+          <div class= "upload-templates">
+            <div class= "user-instruction">
+            <h1>2. Upload your design</h1>
+            </div>
+          </div>
+          <div class= "select-quantity">
+          <div class= "user-instruction">
+            <h1>3. Select your quantity</h1>
+            </div>
+            <div class= "user-input">
+              <div class="user-input-quantity">
+              <p>quantity</p>
+                <%= hidden_field_tag(:product_id, @product.id) %>
+                <%= f.text_field :quantity, size: 5 %>
+              </div>
+               <div class="user-input-price-per-unit">
+               <p>Pri/Unit</p>
+               <p class="jq-update" id="jq-price-per-unit">PPU</p>
+
+              </div>
+               <div class="user-input-total-price">
+               <p>T Price</p>
+               <p class="jq-update" id="jq-total-price">TP</p>
+
+              </div>
+
+
+
+
+            </div>
+          </div>
+          <div class= "add-to-cart" >
+            <%= f.submit "Add to cart", :class => 'btn-main', 'data-toggle': 'modal', 'data-target': '#modal-add-to-cart' %>
           </div>
         </div>
-        <div class= "select-quantity">
-        <div class= "user-instruction">
-          <h1>3. Select your quantity</h1>
-          </div>
-          <div class= "user-input">
-
-              <%= hidden_field_tag(:product_id, @product.id) %>
-              <%= f.label :quantity %>:
-              <%= f.text_field :quantity %><br />
-          </div>
-        </div>
-        <div class= "add-to-cart" >
-          <%= f.submit "Add to cart", :class => 'btn-main', 'data-toggle': 'modal', 'data-target': '#modal-add-to-cart' %>
-
-        </div>
-
       </div>
+      <div class= "additional-info">
+        <p>
+        Need help with your design? Email us your logo/artword  and we will help design it free of charge.
+        </p>
+        <p>
+        Want to check the quality first? Simply change the quantity to 0 and we’ll send you a free sample!
+        </p>
+      </div>
+    </div>
 
-    </div>
-    <div class= "additional-info">
-      <p>
-      Need help with your design? Email us your logo/artword  and we will help design it free of charge.
-      </p>
-      <p>
-      Want to check the quality first? Simply change the quantity to 0 and we’ll send you a free sample!
-      </p>
-    </div>
+
   </div>
-<% end %>
+
 </div>
+<% end %>
 
 
 <div class="modal fade" id="modal-add-to-cart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -101,3 +148,8 @@
     </div>
   </div>
 </div>
+
+
+<script>
+  var price_lists = <%= raw @price_breaks %>;
+</script>
