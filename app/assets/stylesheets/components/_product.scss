@@ -93,6 +93,7 @@
   width: 99%;
   height:100%;
   text-justify: center;
+  justify-content: space-between;
   // height: 50px;
 
 }
@@ -173,6 +174,15 @@
 .modal-body {
   display: flex;
   justify-content: center;
+}
+
+.design-template-file {
+    margin-right: 30px;
+}
+
+.design-template-file img {
+  width: 40px;
+
 }
 
 
