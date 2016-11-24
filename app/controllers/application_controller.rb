@@ -4,6 +4,14 @@ class ApplicationController < ActionController::Base
   # before_action :session_cart
   helper_method :session_cart
 
+  def after_sign_in_path_for(resource)
+    if session_cart #your path
+      shopping_cart_path(current_user.id)
+    else
+      root_path
+    end
+  end
+
   def session_cart
     if session[:shopping_cart_id]
       begin
