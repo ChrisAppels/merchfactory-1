@@ -165,6 +165,16 @@ product_params = [{
   name: "Business Card Bottle Openers",
   description: "Give your customers a business card they won't throw away! Made from powder-coated stainless steel with a high resolution super durable print. ",
   sku: "MF-BCO-WH-01"
+},
+{
+  name: "USB Phone Chargers",
+  description: "Your clients will love these handy little Phone Banks! With 2600mAh of charge these battery packs will keep you connected with the world. High resolution print means your brand will stay front of mind.",
+  sku: "MF-USB-PC-01"
+  },
+{
+  name: "Key Tags",
+  description: "These key tags are super durable and perfect for membership cards. They can be barcoded or printed with any variable data.",
+  sku: "MF-KT-01"
 # },
 # {
 #   name: "Printed Guitar Pick",
@@ -220,6 +230,11 @@ picture_params = [{
     role: "Product Page Shot"
   },
   {
+    product: Product.find_by(name: 'Key Tags'),
+    image: "db/seeds/KT_SHOT_01_SQUARE.jpg",
+    role: "Product Page Shot"
+  },
+  {
     product: Product.find_by(name: 'iPhone 7 Case'),
     image: "db/seeds/PHONE_CASE_PRODUCT_SHOT_01_SQUARE.jpg",
     role: "Product Page Shot"
@@ -245,6 +260,11 @@ picture_params = [{
     role: "Product Page Shot"
   },
   {
+    product: Product.find_by(name: 'USB Phone Chargers'),
+    image: "db/seeds/USB_PHONE_CHARGERS_SHOT_01_SQUARE.jpg",
+    role: "Product Page Shot"
+  },
+  {
     product: Product.find_by(name: 'Printed USB Business Cards'),
     image: "db/seeds/USB_CARD_PRODUCT_SHOT_01_SQUARE.jpg",
     role: "Product Page Shot"
@@ -266,6 +286,30 @@ end
 
 
 feature_params = [{
+  product_id: Product.find_by(name: 'Key Tags').id,
+  description: "50mm long x 20mm wide x 1.2mm thick.",
+},
+{
+  product_id: Product.find_by(name: 'Key Tags').id,
+  description: "Made from powder-coated stainless steel",
+},
+{
+  product_id: Product.find_by(name: 'Key Tags').id,
+  description: "Full Color high resolution print",
+},
+{
+  product_id: Product.find_by(name: 'USB Phone Chargers').id,
+  description: "100mm long x 20mm wide x 20mm tall.",
+},
+{
+  product_id: Product.find_by(name: 'USB Phone Chargers').id,
+  description: "2600mAh",
+},
+{
+  product_id: Product.find_by(name: 'USB Phone Chargers').id,
+  description: "Full Color high resolution print",
+},
+{
   product_id: Product.find_by(name: 'Business Card Bottle Openers').id,
   description: "85mm long x 55mm wide x 1.2mm thick. Weight = 42g",
 },
@@ -485,6 +529,106 @@ end
 # end
 
 price_break_params = [{
+    product: Product.find_by(name: 'Key Tags'),
+  quantity: 1,
+  price_cents: 995,
+},
+{
+  product: Product.find_by(name: 'Key Tags'),
+  quantity: 10,
+  price_cents: 680,
+},
+{
+  product: Product.find_by(name: 'Key Tags'),
+  quantity: 25,
+  price_cents: 575,
+},
+{
+  product: Product.find_by(name: 'Key Tags'),
+  quantity: 50,
+  price_cents: 280,
+},
+{
+  product: Product.find_by(name: 'Key Tags'),
+  quantity: 100,
+  price_cents: 195,
+},
+{
+  product: Product.find_by(name: 'Key Tags'),
+  quantity: 500,
+  price_cents: 175,
+},
+{
+  product: Product.find_by(name: 'Key Tags'),
+  quantity: 1000,
+  price_cents: 169,
+},
+{
+  product: Product.find_by(name: 'Key Tags'),
+  quantity: 2000,
+  price_cents: 165,
+},
+{
+  product: Product.find_by(name: 'Key Tags'),
+  quantity: 5000,
+  price_cents: 152,
+},
+{
+  product: Product.find_by(name: 'Key Tags'),
+  quantity: 10000,
+  price_cents: 139,
+},
+{
+  product: Product.find_by(name: 'USB Phone Chargers'),
+  quantity: 1,
+  price_cents: 995,
+},
+{
+  product: Product.find_by(name: 'USB Phone Chargers'),
+  quantity: 10,
+  price_cents: 680,
+},
+{
+  product: Product.find_by(name: 'USB Phone Chargers'),
+  quantity: 25,
+  price_cents: 575,
+},
+{
+  product: Product.find_by(name: 'USB Phone Chargers'),
+  quantity: 50,
+  price_cents: 280,
+},
+{
+  product: Product.find_by(name: 'USB Phone Chargers'),
+  quantity: 100,
+  price_cents: 195,
+},
+{
+  product: Product.find_by(name: 'USB Phone Chargers'),
+  quantity: 500,
+  price_cents: 175,
+},
+{
+  product: Product.find_by(name: 'USB Phone Chargers'),
+  quantity: 1000,
+  price_cents: 169,
+},
+{
+  product: Product.find_by(name: 'USB Phone Chargers'),
+  quantity: 2000,
+  price_cents: 165,
+},
+{
+  product: Product.find_by(name: 'USB Phone Chargers'),
+  quantity: 5000,
+  price_cents: 152,
+},
+{
+  product: Product.find_by(name: 'USB Phone Chargers'),
+  quantity: 10000,
+  price_cents: 139,
+},
+{
   product: Product.find_by(name: 'Business Card Bottle Openers'),
   quantity: 1,
   price_cents: 995,
