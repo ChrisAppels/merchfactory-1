@@ -16,6 +16,14 @@ class OrderItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @order_item = OrderItem.find(params[:id])
+    @shopping_cart = ShoppingCart.find(params[:shopping_cart_id])
+    @order_item.destroy
+    redirect_to shopping_cart_path(@shopping_cart)
+  end
+
+
 private
 
   def order_item_params

@@ -115,9 +115,8 @@ end
 
 
 category_params = [{
-  name: "All Products",
-  description: "This category literally has everyting",
-
+  name: "Printed Clothing",
+  description: "Make some extra cash from your gigs with our quality band merch products",
 },
 {
   name: "Band Merchandise",
@@ -161,6 +160,21 @@ product_params = [{
   name: "Custom Printed Wine Box",
   description: "Amazing gift. You should purchase many for many friends",
   sku: "MF-WB-PINEWOOD-01"
+},
+{
+  name: "Business Card Bottle Openers",
+  description: "Give your customers a business card they won't throw away! Made from powder-coated stainless steel with a high resolution super durable print. ",
+  sku: "MF-BCO-WH-01"
+},
+{
+  name: "USB Phone Chargers",
+  description: "Your clients will love these handy little Phone Banks! With 2600mAh of charge these battery packs will keep you connected with the world. High resolution print means your brand will stay front of mind.",
+  sku: "MF-USB-PC-01"
+  },
+{
+  name: "Key Tags",
+  description: "These key tags are super durable and perfect for membership cards. They can be barcoded or printed with any variable data.",
+  sku: "MF-KT-01"
 # },
 # {
 #   name: "Printed Guitar Pick",
@@ -181,11 +195,11 @@ product_params = [{
 #   name: "Bar Blade Bottle Opener",
 #   description: "Perfect bottle opener for bartenders. Large area for branding. These are great for Breweries",
 #   sku: "MF-GBT-RND-70"
-# },
-# {
-#   name: "Printed USB Business Cards",
-#   description: "Fits nicely in your wallet and a full 8gig of storage. High quality print on both side. Save your brochures and company documents",
-#   sku: "MF-USBC-8-01"
+},
+{
+  name: "Printed USB Business Cards",
+  description: "Fits nicely in your wallet and a full 8gig of storage. High quality print on both side. Save your brochures and company documents",
+  sku: "MF-USBC-8-01"
 }]
 
 product_params.each do |product_param|
@@ -216,6 +230,11 @@ picture_params = [{
     role: "Product Page Shot"
   },
   {
+    product: Product.find_by(name: 'Key Tags'),
+    image: "db/seeds/KT_SHOT_01_SQUARE.jpg",
+    role: "Product Page Shot"
+  },
+  {
     product: Product.find_by(name: 'iPhone 7 Case'),
     image: "db/seeds/PHONE_CASE_PRODUCT_SHOT_01_SQUARE.jpg",
     role: "Product Page Shot"
@@ -234,11 +253,21 @@ picture_params = [{
     product: Product.find_by(name: 'Custom Printed Wine Box'),
     image: "db/seeds/WINE_BOX_PRODUCT_SHOT_01_SQUARE.jpg",
     role: "Product Page Shot"
-  # },
-  # {
-  #   product: Product.find_by(name: 'Printed Golf Ball'),
-  #   image: "db/seeds/T-SHIRT_PRODUCT_SHOT_01_SQUARE.jpg",
-  #   role: "Product Page Shot"
+  },
+  {
+    product: Product.find_by(name: 'Business Card Bottle Openers'),
+    image: "db/seeds/BCO_PRODUCT_SHOT_01_SQUARE.jpg",
+    role: "Product Page Shot"
+  },
+  {
+    product: Product.find_by(name: 'USB Phone Chargers'),
+    image: "db/seeds/USB_PHONE_CHARGERS_SHOT_01_SQUARE.jpg",
+    role: "Product Page Shot"
+  },
+  {
+    product: Product.find_by(name: 'Printed USB Business Cards'),
+    image: "db/seeds/USB_CARD_PRODUCT_SHOT_01_SQUARE.jpg",
+    role: "Product Page Shot"
   }]
 
 
@@ -255,6 +284,122 @@ picture_params.each do |picture_param|
   end
 end
 
+
+feature_params = [{
+  product_id: Product.find_by(name: 'Key Tags').id,
+  description: "50mm long x 20mm wide x 1.2mm thick.",
+},
+{
+  product_id: Product.find_by(name: 'Key Tags').id,
+  description: "Made from powder-coated stainless steel",
+},
+{
+  product_id: Product.find_by(name: 'Key Tags').id,
+  description: "Full Color high resolution print",
+},
+{
+  product_id: Product.find_by(name: 'USB Phone Chargers').id,
+  description: "100mm long x 20mm wide x 20mm tall.",
+},
+{
+  product_id: Product.find_by(name: 'USB Phone Chargers').id,
+  description: "2600mAh",
+},
+{
+  product_id: Product.find_by(name: 'USB Phone Chargers').id,
+  description: "Full Color high resolution print",
+},
+{
+  product_id: Product.find_by(name: 'Business Card Bottle Openers').id,
+  description: "85mm long x 55mm wide x 1.2mm thick. Weight = 42g",
+},
+{
+  product_id: Product.find_by(name: 'Business Card Bottle Openers').id,
+  description: "Super durable, high resolution print. Made from stainless steel",
+},
+{
+  product_id: Product.find_by(name: 'Business Card Bottle Openers').id,
+  description: "Avaible with variable data, unique barcodes, member names/numbers",
+},
+{
+  product_id: Product.find_by(name: 'Key Tag Bottle Opener').id,
+  description: "65mm long x 40mm wide x 2.4mm thick. Weight = 35g",
+},
+{
+  product_id: Product.find_by(name: 'Key Tag Bottle Opener').id,
+  description: "Super durable, high resolution print. Made from stainless steel",
+},
+{
+  product_id: Product.find_by(name: 'Key Tag Bottle Opener').id,
+  description: "Avaible with variable data, unique barcodes, member names/numbers",
+},
+{
+
+  product_id: Product.find_by(name: 'iPhone 7 Case').id,
+  description: "Super durable, high resolution print",
+},
+{
+  product_id: Product.find_by(name: 'iPhone 7 Case').id,
+  description: "Raised lip to protect screen",
+},
+{
+  product_id: Product.find_by(name: 'iPhone 7 Case').id,
+  description: "Made from high impact plastic",
+},
+{
+  product_id: Product.find_by(name: 'Printed T-Shirt').id,
+  description: "High quality AS Colour T-Shirts",
+},
+{
+  product_id: Product.find_by(name: 'Printed T-Shirt').id,
+  description: "Made from 100'%' cotten",
+},
+{
+  product_id: Product.find_by(name: 'Printed T-Shirt').id,
+  description: "Second side print Add $3.95",
+},
+{
+  product_id: Product.find_by(name: 'BagReturn Luggage Tag').id,
+  description: "Includes branded instructional pack",
+},
+{
+  product_id: Product.find_by(name: 'BagReturn Luggage Tag').id,
+  description: "BagReturn web app",
+},
+{
+  product_id: Product.find_by(name: 'BagReturn Luggage Tag').id,
+  description: "Comes with Stainless Steel attachment cable",
+},
+{
+  product_id: Product.find_by(name: 'Custom Printed Wine Box').id,
+  description: "33cm tall x 10cm wide x 10cm deep",
+},
+{
+  product_id: Product.find_by(name: 'Custom Printed Wine Box').id,
+  description: "Availble in other sizes on request",
+},
+{
+  product_id: Product.find_by(name: 'Custom Printed Wine Box').id,
+  description: "Can be customised with names or batch numbers",
+},
+{
+  product_id: Product.find_by(name: 'Printed USB Business Cards').id,
+  description: "8 Gig of memory",
+},
+{
+  product_id: Product.find_by(name: 'Printed USB Business Cards').id,
+  description: "Pre-loading of files also availble on request",
+},
+{
+  product_id: Product.find_by(name: 'Printed USB Business Cards').id,
+  description: "Printed both sides",
+}]
+
+
+
+feature_params.each do |feature_param|
+  Feature.find_or_create_by(feature_param)
+end
 
 
 #*************************************************************
@@ -320,7 +465,7 @@ address_params = [{
   city: "Amsterdam",
   post_code: "101BZ",
   state: "Dutch State",
-  country: "The Netherlands"
+  country: "Netherlands"
 }]
 
 address_params.each do |address_param|
@@ -384,6 +529,156 @@ end
 # end
 
 price_break_params = [{
+    product: Product.find_by(name: 'Key Tags'),
+  quantity: 1,
+  price_cents: 995,
+},
+{
+  product: Product.find_by(name: 'Key Tags'),
+  quantity: 10,
+  price_cents: 680,
+},
+{
+  product: Product.find_by(name: 'Key Tags'),
+  quantity: 25,
+  price_cents: 575,
+},
+{
+  product: Product.find_by(name: 'Key Tags'),
+  quantity: 50,
+  price_cents: 280,
+},
+{
+  product: Product.find_by(name: 'Key Tags'),
+  quantity: 100,
+  price_cents: 195,
+},
+{
+  product: Product.find_by(name: 'Key Tags'),
+  quantity: 500,
+  price_cents: 175,
+},
+{
+  product: Product.find_by(name: 'Key Tags'),
+  quantity: 1000,
+  price_cents: 169,
+},
+{
+  product: Product.find_by(name: 'Key Tags'),
+  quantity: 2000,
+  price_cents: 165,
+},
+{
+  product: Product.find_by(name: 'Key Tags'),
+  quantity: 5000,
+  price_cents: 152,
+},
+{
+  product: Product.find_by(name: 'Key Tags'),
+  quantity: 10000,
+  price_cents: 139,
+},
+{
+  product: Product.find_by(name: 'USB Phone Chargers'),
+  quantity: 1,
+  price_cents: 995,
+},
+{
+  product: Product.find_by(name: 'USB Phone Chargers'),
+  quantity: 10,
+  price_cents: 680,
+},
+{
+  product: Product.find_by(name: 'USB Phone Chargers'),
+  quantity: 25,
+  price_cents: 575,
+},
+{
+  product: Product.find_by(name: 'USB Phone Chargers'),
+  quantity: 50,
+  price_cents: 280,
+},
+{
+  product: Product.find_by(name: 'USB Phone Chargers'),
+  quantity: 100,
+  price_cents: 195,
+},
+{
+  product: Product.find_by(name: 'USB Phone Chargers'),
+  quantity: 500,
+  price_cents: 175,
+},
+{
+  product: Product.find_by(name: 'USB Phone Chargers'),
+  quantity: 1000,
+  price_cents: 169,
+},
+{
+  product: Product.find_by(name: 'USB Phone Chargers'),
+  quantity: 2000,
+  price_cents: 165,
+},
+{
+  product: Product.find_by(name: 'USB Phone Chargers'),
+  quantity: 5000,
+  price_cents: 152,
+},
+{
+  product: Product.find_by(name: 'USB Phone Chargers'),
+  quantity: 10000,
+  price_cents: 139,
+},
+{
+  product: Product.find_by(name: 'Business Card Bottle Openers'),
+  quantity: 1,
+  price_cents: 995,
+},
+{
+  product: Product.find_by(name: 'Business Card Bottle Openers'),
+  quantity: 10,
+  price_cents: 680,
+},
+{
+  product: Product.find_by(name: 'Business Card Bottle Openers'),
+  quantity: 25,
+  price_cents: 575,
+},
+{
+  product: Product.find_by(name: 'Business Card Bottle Openers'),
+  quantity: 50,
+  price_cents: 280,
+},
+{
+  product: Product.find_by(name: 'Business Card Bottle Openers'),
+  quantity: 100,
+  price_cents: 195,
+},
+{
+  product: Product.find_by(name: 'Business Card Bottle Openers'),
+  quantity: 500,
+  price_cents: 175,
+},
+{
+  product: Product.find_by(name: 'Business Card Bottle Openers'),
+  quantity: 1000,
+  price_cents: 169,
+},
+{
+  product: Product.find_by(name: 'Business Card Bottle Openers'),
+  quantity: 2000,
+  price_cents: 165,
+},
+{
+  product: Product.find_by(name: 'Business Card Bottle Openers'),
+  quantity: 5000,
+  price_cents: 152,
+},
+{
+  product: Product.find_by(name: 'Business Card Bottle Openers'),
+  quantity: 10000,
+  price_cents: 139,
+},
+{
   product: Product.find_by(name: 'Key Tag Bottle Opener'),
   quantity: 1,
   price_cents: 995,
@@ -432,6 +727,207 @@ price_break_params = [{
   product: Product.find_by(name: 'Key Tag Bottle Opener'),
   quantity: 10000,
   price_cents: 139,
+},
+{
+  product: Product.find_by(name: 'iPhone 7 Case'),
+  quantity: 1,
+  price_cents: 995,
+},
+{
+  product: Product.find_by(name: 'iPhone 7 Case'),
+  quantity: 10,
+  price_cents: 680,
+},
+{
+  product: Product.find_by(name: 'iPhone 7 Case'),
+  quantity: 25,
+  price_cents: 575,
+},
+{
+  product: Product.find_by(name: 'iPhone 7 Case'),
+  quantity: 50,
+  price_cents: 280,
+},
+{
+  product: Product.find_by(name: 'iPhone 7 Case'),
+  quantity: 100,
+  price_cents: 195,
+},
+{
+  product: Product.find_by(name: 'iPhone 7 Case'),
+  quantity: 500,
+  price_cents: 175,
+},
+{
+  product: Product.find_by(name: 'iPhone 7 Case'),
+  quantity: 1000,
+  price_cents: 169,
+},
+{
+  product: Product.find_by(name: 'iPhone 7 Case'),
+  quantity: 2000,
+  price_cents: 165,
+},
+{
+  product: Product.find_by(name: 'iPhone 7 Case'),
+  quantity: 5000,
+  price_cents: 152,
+},
+{
+  product: Product.find_by(name: 'iPhone 7 Case'),
+  quantity: 10000,
+  price_cents: 139,
+},
+{
+  product: Product.find_by(name: 'Printed T-Shirt'),
+  quantity: 1,
+  price_cents: 995,
+},
+{
+  product: Product.find_by(name: 'Printed T-Shirt'),
+  quantity: 10,
+  price_cents: 680,
+},
+{
+  product: Product.find_by(name: 'Printed T-Shirt'),
+  quantity: 25,
+  price_cents: 575,
+},
+{
+  product: Product.find_by(name: 'Printed T-Shirt'),
+  quantity: 50,
+  price_cents: 280,
+},
+{
+  product: Product.find_by(name: 'Printed T-Shirt'),
+  quantity: 100,
+  price_cents: 195,
+},
+{
+  product: Product.find_by(name: 'Printed T-Shirt'),
+  quantity: 500,
+  price_cents: 175,
+},
+{
+  product: Product.find_by(name: 'Printed T-Shirt'),
+  quantity: 1000,
+  price_cents: 169,
+},
+{
+  product: Product.find_by(name: 'Printed T-Shirt'),
+  quantity: 2000,
+  price_cents: 165,
+},
+{
+  product: Product.find_by(name: 'Printed T-Shirt'),
+  quantity: 5000,
+  price_cents: 152,
+},
+{
+  product: Product.find_by(name: 'Printed T-Shirt'),
+  quantity: 10000,
+  price_cents: 139,
+},
+{
+  product: Product.find_by(name: 'BagReturn Luggage Tag'),
+  quantity: 1,
+  price_cents: 995,
+},
+{
+  product: Product.find_by(name: 'BagReturn Luggage Tag'),
+  quantity: 10,
+  price_cents: 680,
+},
+{
+  product: Product.find_by(name: 'BagReturn Luggage Tag'),
+  quantity: 25,
+  price_cents: 575,
+},
+{
+  product: Product.find_by(name: 'BagReturn Luggage Tag'),
+  quantity: 50,
+  price_cents: 280,
+},
+{
+  product: Product.find_by(name: 'BagReturn Luggage Tag'),
+  quantity: 100,
+  price_cents: 195,
+},
+{
+  product: Product.find_by(name: 'BagReturn Luggage Tag'),
+  quantity: 500,
+  price_cents: 175,
+},
+{
+  product: Product.find_by(name: 'BagReturn Luggage Tag'),
+  quantity: 1000,
+  price_cents: 169,
+},
+{
+  product: Product.find_by(name: 'BagReturn Luggage Tag'),
+  quantity: 2000,
+  price_cents: 165,
+},
+{
+  product: Product.find_by(name: 'BagReturn Luggage Tag'),
+  quantity: 5000,
+  price_cents: 152,
+},
+{
+  product: Product.find_by(name: 'BagReturn Luggage Tag'),
+  quantity: 10000,
+  price_cents: 139,
+  },
+{
+  product: Product.find_by(name: 'Custom Printed Wine Box'),
+  quantity: 1,
+  price_cents: 995,
+},
+{
+  product: Product.find_by(name: 'Custom Printed Wine Box'),
+  quantity: 10,
+  price_cents: 680,
+},
+{
+  product: Product.find_by(name: 'Custom Printed Wine Box'),
+  quantity: 25,
+  price_cents: 575,
+},
+{
+  product: Product.find_by(name: 'Custom Printed Wine Box'),
+  quantity: 50,
+  price_cents: 280,
+},
+{
+  product: Product.find_by(name: 'Custom Printed Wine Box'),
+  quantity: 100,
+  price_cents: 195,
+},
+{
+  product: Product.find_by(name: 'Custom Printed Wine Box'),
+  quantity: 500,
+  price_cents: 175,
+},
+{
+  product: Product.find_by(name: 'Custom Printed Wine Box'),
+  quantity: 1000,
+  price_cents: 169,
+},
+{
+  product: Product.find_by(name: 'Custom Printed Wine Box'),
+  quantity: 2000,
+  price_cents: 165,
+},
+{
+  product: Product.find_by(name: 'Custom Printed Wine Box'),
+  quantity: 5000,
+  price_cents: 152,
+},
+{
+  product: Product.find_by(name: 'Custom Printed Wine Box'),
+  quantity: 10000,
+  price_cents: 139,
+
 }]
 
 price_break_params.each do |price_break_param|

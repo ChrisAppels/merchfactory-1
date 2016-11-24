@@ -2,7 +2,13 @@
   visibility: hidden;
 }
 
+.stripe-button-el{
+  background-image: none !important;
+  background-color: $merchfactory_pink !important;
+}
+
 .stripe-button-el span{
+  box-shadow: none !important;
   background-image: none !important;
   background-color: $merchfactory_pink !important;
   height: 36px !important;
@@ -11,7 +17,7 @@
   // padding: 10px 15px;
   border-radius: 0px !important;
   // opacity: 0.6;
-  margin: 0px !important;
+  margin: 5px !important;
   color: white !important;
   text-align: center !important;
   border-style: none !important;

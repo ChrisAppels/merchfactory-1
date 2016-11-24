@@ -1,12 +1,10 @@
-<div id="page-content">
-  <div class="container-log-in">
-    <div class="checkout-container">
+<div class="checkout-form-container">
 
-    <h1>Pay for your order</h1>
-    <%= form_tag order_payments_path(@order) do %>
+    <h1 id="bold-big-h1" class="text-center">Pay for your order</h1>
+    <%= form_tag order_payments_path(@order), method: 'post' do %>
 
-  <div class="align-center table-checkout col-md-6">
-  <h2>Your personal info</h2>
+  <div class="checkout-form-left">
+  <h2 id="bold-h1" class="text-center">Your personal info</h2>
     <table class="table table-hover table-checkout">
       <tr>
         <td class="text-right">Email:</td>
@@ -31,60 +29,60 @@
     </table>
  </div>
 
-  <div class=" col-md-6">
-  <h2 class="text-center">Check your shipping address</h2>
-    <form class="form-horizontal">
-      <div class="form-group row text">
+  <div class="checkout-form-right">
+  <h2 id="bold-h1" class="text-center">Check your shipping address</h2>
+        <div class="shipping-detail-row">
       <tr>
-        <td class="text-left"><label class="label-left" for="street">Street Name:</label></td>
-        <td><input class="text-center" type='text' name='street' size='25' value=<%= "#{current_user.addresses.second.street_name}" %> /></td>
+        <div class="label-row"><td><label for="street">Street Name:</label></td></div>
+        <div class="input-row"><td><input type='text' name='street' size='25' value=<%= "#{current_user.addresses.second.street_name}" %> /></td></div>
       </tr>
       </div>
 
 
-      <div class="form-group row text">
+      <div class="shipping-detail-row">
       <tr>
-       <td class="text-left" ><label class="label-left" for="number">House Number:</label></td>
-       <td><input class="text-center" type='text' name='number' size='25' value=<%= "#{current_user.addresses.second.street_number}" %> /></td>
+       <div class="label-row"><td><label for="number">House Number:</label></td></div>
+       <div class="input-row"><td><input type='text' name='number' size='25' value=<%= "#{current_user.addresses.second.street_number}" %> /></td></div>
       </tr>
       </div>
 
 
-      <div class="form-group row text">
+      <div class="shipping-detail-row">
       <tr>
-        <td class="text-left" ><label class="label-left" for="city">City:</label></td>
-        <td><input class="text-center" type='text' name='city' size='25' value=<%= "#{current_user.addresses.second.city}" %> /></td>
+        <div class="label-row"><td><label for="city">City:</label></td></div>
+        <div class="input-row"><td><input type='text' name='city' size='25' value=<%= "#{current_user.addresses.second.city}" %> /></td></div>
       </tr>
       </div>
 
 
-      <div class="form-group row text">
+      <div class="shipping-detail-row">
       <tr>
-        <td class="text-left" ><label class="label-left" for="postal code">Postal Code:</label></td>
-        <td><input class="text-center" type='text' name='postal code' size='25' value=<%= "#{current_user.addresses.second.post_code}" %> /></td>
+        <div class="label-row"><td><label for="postal code">Postal Code:</label></td></div>
+        <div class="input-row"><td><input type='text' name='postal code' size='25' value=<%= "#{current_user.addresses.second.post_code}" %> /></td></div>
       </tr>
       </div>
 
 
-      <div class="form-group row text">
+      <div class="shipping-detail-row">
       <tr>
-        <td class="text-left" ><label class="label-left" for="country">Country:</label></td>
-        <td><input class="text-center" type='text' name='country' size='25' value=<%= "#{current_user.addresses.second.country}" %> /></td>
+        <div class="label-row"><td><label for="country">Country:</label></td></div>
+        <div class="input-row"><td><input type='text' name='country' size='25' value=<%= "#{current_user.addresses.second.country}" %> /></td></div>
       </tr>
       </div>
-    </form>
   </div>
 
-      <div>
-      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-      data-name="My Order"
-      data-description="MERCH-Factory Custom Merchandise"
-      data-amount="@order.amount_cents"
-      data-currency="eur"></script>
+      <div class="align-center col-md-2 col-md-offset-5">
+      <script src="https://checkout.stripe.com/checkout.js"
+        class="stripe-button"
+        data-email="<%= current_user.email  %>"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-name="My Order"
+        data-description="MERCH-Factory Custom Merchandise"
+        data-amount="@order.amount_cents"
+        data-currency="eur">
+      </script>
       </div>
-
       <% end %>
-    </div>
-  </div>
+
 </div>
+

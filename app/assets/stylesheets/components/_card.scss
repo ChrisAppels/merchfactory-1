@@ -6,6 +6,7 @@
   height: 360px;
   background-size: cover;
   position: relative;
+  margin: 25px;
 }
 
 .product-card-name {
@@ -30,6 +31,39 @@
 .card-product-name p {
   font-size: 13px;
   }
+
+
+.row .product-card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 3px;
+    margin-bottom: 20px;
+  }
+
+/* On mouse-over, add a deeper shadow */
+.row .product-card:hover {
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+  color: black;
+}
+
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index:2;
+  background: black;
+  opacity: 0;
+  transition: opacity 200ms;
+}
+.card-link:hover{
+  opacity: 0.2;
+}
+
+
 
 // .card-link {
 //   position: absolute;
