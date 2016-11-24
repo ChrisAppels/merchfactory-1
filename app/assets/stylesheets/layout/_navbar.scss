@@ -29,6 +29,10 @@ nav .top-nav div p {
   margin: 0px;
 }
 
+// #products-link {
+//   border-bottom: solid 5px $merchfactory_pink;
+// }
+
 /////// STYLING TOP PART /////////
 
 /////// HOMEMADE NAVBAR //////////
@@ -95,8 +99,14 @@ nav .bottom-nav .product-search li:last-child {
   padding-left: 0; margin-left: 0;
 }
 
-nav .bottom-nav .product-search li a { transition: 0.3s; }
-nav .bottom-nav .product-search li a:hover { color:$merchfactory_pink; }
+nav .bottom-nav .product-search li a {
+  transition: 0.3s;
+}
+nav .bottom-nav .product-search li a:hover {
+  color:$merchfactory_pink;
+  text-decoration: none;
+  cursor: hand;
+}
 
 nav .bottom-nav .navbar-wagon-item ul li { padding: 0;}
 
@@ -118,15 +128,14 @@ nav .bottom-nav .customer-navigation li a:hover {
   top: 0;
   width: 100%;
   background-color: #fff;
-  line-height: 50px;
-  height: 50px;
+  line-height:40px;
+  height: 40px;
 }
 
 
 
 .dropdown-menu {
-  background-color:rgba(255, 255, 255, 0.8)
-
+  background-color:rgba(255, 255, 255, 0.8);
 }
 
 #search-button {
@@ -146,11 +155,11 @@ background-color: transparent;
 
 
 /////// DROPDOWN MECHANISME ////////
-/* nav .bottom-nav #dropdown-products {
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-  background-color:rgba(255, 255, 255, 0.8);
-  width: 100%;
+nav .bottom-nav #dropdown-products {
+ border-bottom: solid 5px $merchfactory_pink;
+ height: 46px;
+ text-decoration: none;
 }
- */
+
+
+
