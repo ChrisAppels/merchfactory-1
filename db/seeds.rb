@@ -30,9 +30,9 @@ user_params = [{
   avatar: "http://static4.businessinsider.com/image/56c640526e97c625048b822a-480/donald-trump.jpg"
 },
 {
-  first_name: "Pieter",
-  last_name: "Jansnen",
-  email: "staff1@gmail.com",
+  first_name: "Chris",
+  last_name: "Apples",
+  email: "chris@gmail.com",
   phone: "9873254987",
   company_name: "Company X",
   password: "123456",
