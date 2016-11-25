@@ -32,7 +32,7 @@ user_params = [{
 {
   first_name: "Chris",
   last_name: "Apples",
-  email: "chris@gmail.com",
+  email: "chris@theflamingpanthers.com",
   phone: "9873254987",
   company_name: "Company X",
   password: "123456",
